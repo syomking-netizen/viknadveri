@@ -142,20 +142,25 @@
     .nav-arrow:hover { background: rgba(255,255,255,0.18); transform: translateY(-50%) scale(1.05); }
     a:focus, button:focus, .action-btn:focus { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
     
-    /* Стилі калькулятора */
-    .calc { max-width: 380px; margin: 30px auto; background: var(--card-bg); padding: 25px; border: 2px solid var(--primary); border-radius: 12px; box-shadow: var(--shadow-md); }
-    .calc h2 { color: var(--primary); font-size: 22px; text-align: center; margin-top: 0; text-transform: uppercase; letter-spacing: 1px; font-family: 'Montserrat', sans-serif; font-weight: 700; }
-    .calc label { display: block; margin: 15px 0 5px; font-size: 13px; color: #aaa; font-weight: bold; }
-    .calc input, .calc select { width: 100%; padding: 12px; background: #252525; color: #fff; border: 1px solid #333; border-radius: 6px; box-sizing: border-box; outline: none; transition: border 0.3s; font-family: 'Inter', sans-serif; font-size: 14px; }
-    .calc input:focus, .calc select:focus { border-color: var(--primary); }
-    .calc .chk { display: flex; align-items: center; margin: 15px 0; cursor: pointer; }
-    .calc .chk input { width: auto; margin-right: 12px; transform: scale(1.2); cursor: pointer; }
-    .calc button { width: 100%; padding: 16px; background: var(--primary); color: white; border: none; border-radius: 6px; font-size: 17px; font-weight: bold; margin-top: 20px; cursor: pointer; transition: transform 0.2s, background 0.3s; text-transform: uppercase; font-family: 'Montserrat', sans-serif; }
-    .calc button:hover { background: var(--primary-hover); transform: translateY(-2px); }
-    .calc button:active { transform: translateY(0); }
-    .calc #result { margin-top: 25px; padding-top: 20px; border-top: 1px solid #333; text-align: center; }
-    .calc .final-sum { font-size: 24px; color: #fff; font-weight: bold; display: block; margin-bottom: 10px; font-family: 'Montserrat', sans-serif; }
-    .calc .hidden { display: none; }
+    /* КАЛЬКУЛЯТОР СТИЛІ */
+    .calc-card { max-width: 440px; width: 100%; background: #1a1a1a; padding: 25px; border: 1px solid #2a2a2a; border-top: 4px solid #e31e24; border-radius: 8px; box-shadow: 0 15px 35px rgba(0,0,0,0.6); margin: 40px auto 0; }
+    .calc-card h2 { color: #e31e24; font-size: 18px; text-align: center; margin: 0 0 20px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+    .calc-span-2 { grid-column: span 2; }
+    .calc-field-label { display: block; margin-bottom: 6px; font-size: 11px; color: rgba(227, 30, 36, 0.5); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .calc-card input, .calc-card select { width: 100%; padding: 12px; background: #252525; color: #fff; border: 1px solid #333; border-radius: 5px; box-sizing: border-box; font-size: 14px; outline: none; }
+    .calc-card input:focus, .calc-card select:focus { border-color: #e31e24; }
+    .calc-options { margin: 15px 0; border-top: 1px solid #2a2a2a; padding-top: 15px; }
+    .calc-chk-wrap { display: flex; align-items: center; gap: 12px; cursor: pointer; font-size: 12px; color: rgba(227, 30, 36, 0.5); font-weight: 600; text-transform: uppercase; margin-bottom: 10px; }
+    .calc-chk-wrap input { width: 16px; height: 16px; accent-color: #e31e24; cursor: pointer; opacity: 0.7; }
+    .calc-btn { width: 100%; padding: 16px; background: #e31e24; color: #fff; border: none; border-radius: 5px; font-size: 15px; font-weight: 700; cursor: pointer; text-transform: uppercase; margin-top: 10px; transition: 0.3s; }
+    .calc-btn:hover { background: #ff2a31; }
+    .calc-res-box { margin-top: 20px; padding: 15px; background: rgba(227, 30, 36, 0.04); border: 1px dashed rgba(227, 30, 36, 0.4); border-radius: 6px; text-align: center; display: none; }
+    .calc-res-pre { font-size: 11px; color: #888; text-transform: uppercase; display: block; margin-bottom: 2px; }
+    .calc-price { font-size: 24px; color: #fff; font-weight: 600; display: block; margin-bottom: 5px; }
+    .calc-res-after { font-size: 13px; color: #e31e24; font-weight: 600; text-transform: uppercase; display: block; letter-spacing: 0.5px; }
+    .calc-hidden { display: none !important; }
+    
     @media (max-width: 900px) {
       .card { flex-direction: column; align-items: center; }
       .card-image-wrapper { width: 100%; max-width: 100%; height: 280px; padding: 10px; }
@@ -173,7 +178,10 @@
       .sub-item { margin-bottom: 0; }
       #details-page, #gallery-page { padding: 15px; }
       .back-btn { left: 15px; bottom: 15px; font-size: 0.7rem; padding: 10px 18px; }
-      .calc { margin: 20px 10px; padding: 20px; max-width: 100%; }
+    }
+    @media (max-width: 480px) {
+      .calc-grid { grid-template-columns: 1fr; }
+      .calc-span-2 { grid-column: auto; }
     }
   </style>
 </head>
@@ -254,54 +262,62 @@
       <div id="dynamic-header-block"></div>
       <div class="sub-grid" id="sub-grid-details"></div>
       
-      <div class="calc" id="calculator-section">
+      <!-- КАЛЬКУЛЯТОР ДЛЯ DETAILS PAGE -->
+      <div class="calc-card">
         <h2>Орієнтир вартості</h2>
-        <label for="cat">Розділ:</label>
-        <select id="cat">
-          <option value="windows">Вікна</option>
-          <option value="doors">Двері (металеві)</option>
-          <option value="gates">Ворота</option>
-          <option value="fences">Паркани</option>
-          <option value="canopies">Навіси</option>
-          <option value="metalwork">Металоконструкції</option>
-        </select>
-        <div id="size">
-          <label id="label-w" for="width">Ширина (м):</label>
-          <input type="number" id="width" value="1.0" step="0.1" min="0.1">
-          <label id="label-h" for="height">Висота (м):</label>
-          <input type="number" id="height" value="2.0" step="0.1" min="0.1">
+        <div class="calc-grid">
+          <div class="calc-span-2">
+            <span class="calc-field-label">Тип конструкції:</span>
+            <select id="calc-cat-details" onchange="syncCalcFields('details')">
+              <option value="doors">Вхідні двері</option>
+              <option value="gates">Ворота</option>
+              <option value="fences">Паркани</option>
+              <option value="canopies">Навіси</option>
+              <option value="metal">Металоконструкції</option>
+            </select>
+          </div>
+          <div>
+            <span class="calc-field-label">Ширина (м):</span>
+            <input type="number" id="calc-w-details" value="1.0" step="0.1">
+          </div>
+          <div>
+            <span class="calc-field-label">Висота (м):</span>
+            <input type="number" id="calc-h-details" value="2.0" step="0.1">
+          </div>
+          <div id="calc-doors-ui-details" class="calc-span-2 calc-grid" style="margin:0;">
+            <div>
+              <span class="calc-field-label">Оздоблення:</span>
+              <select id="calc-finish-details">
+                <option value="vinyl">Шкірвініл</option>
+                <option value="mdf">МДФ накладки</option>
+                <option value="paint">Фарбування</option>
+              </select>
+            </div>
+            <div>
+              <span class="calc-field-label">Призначення:</span>
+              <select id="calc-loc-details">
+                <option value="flat">Квартира</option>
+                <option value="street">Вулиця (Будинок)</option>
+              </select>
+            </div>
+          </div>
+          <div id="calc-mats-ui-details" class="calc-span-2 calc-hidden">
+            <span class="calc-field-label">Матеріал:</span>
+            <select id="calc-mat-list-details"></select>
+          </div>
+          <div class="calc-span-2 calc-options">
+            <label class="calc-chk-wrap"><input type="checkbox" id="calc-demo-details"> Демонтаж</label>
+            <label class="calc-chk-wrap calc-hidden" id="calc-beton-ui-details"><input type="checkbox" id="calc-beton-details"> Бетонування</label>
+          </div>
         </div>
-        <label for="material" id="matLabel">Матеріал:</label>
-        <select id="material"></select>
-        <div id="doorsOpts" class="hidden">
-          <label for="finishing">Оздоблення:</label>
-          <select id="finishing">
-            <option value="vinyl">Шкірвініл</option>
-            <option value="mdf">МДФ накладки</option>
-            <option value="paint">Фарбування</option>
-          </select>
-          <label for="locks">Кількість замків:</label>
-          <select id="locks">
-            <option value="1">1 замок</option>
-            <option value="2">2 замки</option>
-          </select>
-          <label for="location">Місце встановлення:</label>
-          <select id="location">
-            <option value="entrance">В під'їзд (квартира)</option>
-            <option value="street">На вулицю (будинок)</option>
-          </select>
+        <button class="calc-btn" onclick="doCalc('details')">Розрахувати</button>
+        <div id="calc-res-box-details" class="calc-res-box">
+          <span class="calc-res-pre">Орієнтовна вартість:</span>
+          <span class="calc-price" id="calc-res-val-details">0 грн</span>
+          <span class="calc-res-after">Остаточна ціна після заміру!</span>
         </div>
-        <div class="chk" onclick="document.getElementById('demontage').click()">
-          <input type="checkbox" id="demontage">
-          <label style="display:inline; color:#eee; cursor:pointer;">Демонтаж старої конструкції</label>
-        </div>
-        <div class="chk hidden" id="concreteRow" onclick="document.getElementById('concrete').click()">
-          <input type="checkbox" id="concrete">
-          <label style="display:inline; color:#eee; cursor:pointer;">Бетонування стовпів</label>
-        </div>
-        <button onclick="calcPrice()">Розрахувати</button>
-        <div id="result"></div>
       </div>
+      
       <div class="bottom-actions">
         <a href="tel:0994714483" class="action-btn">Подзвонити</a>
         <a href="https://t.me/Syomking?text=Код:%202026" target="_blank" rel="noopener noreferrer" class="action-btn" style="background:var(--telegram-color);">Telegram</a>
@@ -312,6 +328,62 @@
       <button class="back-btn" onclick="showCurrentDetails()">← Назад</button>
       <h2 class="section-title">Портфоліо</h2>
       <div id="sub-grid-gallery" class="sub-grid"></div>
+      
+      <!-- КАЛЬКУЛЯТОР ДЛЯ GALLERY PAGE -->
+      <div class="calc-card">
+        <h2>Орієнтир вартості</h2>
+        <div class="calc-grid">
+          <div class="calc-span-2">
+            <span class="calc-field-label">Тип конструкції:</span>
+            <select id="calc-cat-gallery" onchange="syncCalcFields('gallery')">
+              <option value="doors">Вхідні двері</option>
+              <option value="gates">Ворота</option>
+              <option value="fences">Паркани</option>
+              <option value="canopies">Навіси</option>
+              <option value="metal">Металоконструкції</option>
+            </select>
+          </div>
+          <div>
+            <span class="calc-field-label">Ширина (м):</span>
+            <input type="number" id="calc-w-gallery" value="1.0" step="0.1">
+          </div>
+          <div>
+            <span class="calc-field-label">Висота (м):</span>
+            <input type="number" id="calc-h-gallery" value="2.0" step="0.1">
+          </div>
+          <div id="calc-doors-ui-gallery" class="calc-span-2 calc-grid" style="margin:0;">
+            <div>
+              <span class="calc-field-label">Оздоблення:</span>
+              <select id="calc-finish-gallery">
+                <option value="vinyl">Шкірвініл</option>
+                <option value="mdf">МДФ накладки</option>
+                <option value="paint">Фарбування</option>
+              </select>
+            </div>
+            <div>
+              <span class="calc-field-label">Призначення:</span>
+              <select id="calc-loc-gallery">
+                <option value="flat">Квартира</option>
+                <option value="street">Вулиця (Будинок)</option>
+              </select>
+            </div>
+          </div>
+          <div id="calc-mats-ui-gallery" class="calc-span-2 calc-hidden">
+            <span class="calc-field-label">Матеріал:</span>
+            <select id="calc-mat-list-gallery"></select>
+          </div>
+          <div class="calc-span-2 calc-options">
+            <label class="calc-chk-wrap"><input type="checkbox" id="calc-demo-gallery"> Демонтаж</label>
+            <label class="calc-chk-wrap calc-hidden" id="calc-beton-ui-gallery"><input type="checkbox" id="calc-beton-gallery"> Бетонування</label>
+          </div>
+        </div>
+        <button class="calc-btn" onclick="doCalc('gallery')">Розрахувати</button>
+        <div id="calc-res-box-gallery" class="calc-res-box">
+          <span class="calc-res-pre">Орієнтовна вартість:</span>
+          <span class="calc-price" id="calc-res-val-gallery">0 грн</span>
+          <span class="calc-res-after">Остаточна ціна після заміру!</span>
+        </div>
+      </div>
     </div>
   </div>
   <footer>
@@ -325,112 +397,6 @@
     let currentCategory = '';
     let currentImages = [];
     let currentIndex = 0;
-
-    // Калькулятор
-    const catSel = document.getElementById('cat');
-    const matSel = document.getElementById('material');
-    const materials = {
-      windows: ['Профіль Rehau', 'Профіль WDS', 'Профіль OpenTeck'],
-      doors: [],
-      gates: ['Профнастил + метал', 'Ковані елементи', 'Металеві жалюзі'],
-      fences: ['Профнастил (односторонній)', 'Сітка-рабиця', 'Металевий штахетник'],
-      canopies: ['Полікарбонат', 'Профнастил'],
-      metalwork: ['Каркас (стандарт)', 'Посилена конструкція']
-    };
-
-    function updateCalc() {
-      const category = catSel.value;
-      const isDoors = (category === 'doors');
-      const isWindows = (category === 'windows');
-      
-      document.getElementById('doorsOpts').classList.toggle('hidden', !isDoors);
-      document.getElementById('concreteRow').classList.toggle('hidden', isDoors || isWindows);
-      document.getElementById('material').classList.toggle('hidden', isDoors);
-      document.getElementById('matLabel').classList.toggle('hidden', isDoors);
-      
-      const labelW = document.getElementById('label-w');
-      const labelH = document.getElementById('label-h');
-      
-      if (category === 'metalwork') {
-        labelW.innerText = "Ширина по землі (м):";
-        labelH.innerText = "Довжина/Глибина (м):";
-      } else if (category === 'doors') {
-        labelW.innerText = "Ширина прорізу (м):";
-        labelH.innerText = "Висота прорізу (м):";
-      } else if (category === 'canopies') {
-        labelW.innerText = "Ширина (м):";
-        labelH.innerText = "Довжина/Винос (м):";
-      } else {
-        labelW.innerText = "Ширина (м):";
-        labelH.innerText = "Висота (м):";
-      }
-      
-      matSel.innerHTML = '';
-      if (!isDoors && materials[category]) {
-        materials[category].forEach(mat => {
-          let option = document.createElement('option');
-          option.text = mat;
-          matSel.add(option);
-        });
-      }
-    }
-
-    catSel.onchange = updateCalc;
-
-    function calcPrice() {
-      const category = catSel.value;
-      const width = parseFloat(document.getElementById('width').value) || 0;
-      const height = parseFloat(document.getElementById('height').value) || 0;
-      const area = width * height;
-      let price = 0;
-
-      if (category === 'windows') {
-        price = area * 5500; // базова ціна за м²
-        const profile = matSel.value;
-        if (profile === 'Профіль Rehau') price *= 1.15;
-        else if (profile === 'Профіль WDS') price *= 1.05;
-      } else if (category === 'gates') {
-        price = area * 2100;
-      } else if (category === 'fences') {
-        price = area * 1050;
-      } else if (category === 'canopies') {
-        price = area * 1540;
-      } else if (category === 'metalwork') {
-        price = area * 1260;
-        if (matSel.value === 'Посилена конструкція') price *= 1.3;
-      } else if (category === 'doors') {
-        let base = 10850;
-        const finishing = document.getElementById('finishing').value;
-        if (finishing === 'mdf') base += 2450;
-        if (finishing === 'paint') base += 1050;
-        
-        const locksCount = parseInt(document.getElementById('locks').value);
-        const locksPrice = locksCount * 840;
-        
-        const location = document.getElementById('location').value;
-        const locationCoef = location === 'street' ? 1.25 : 1;
-        
-        price = (base * locationCoef) + locksPrice;
-        
-        // коефіцієнт за нестандартний розмір
-        let oversizeCoef = 1.0;
-        if (height > 2.3) oversizeCoef += (height - 2.3) * 0.35;
-        if (width > 1.2) oversizeCoef += (width - 1.2) * 0.35;
-        price *= oversizeCoef;
-      }
-
-      if (document.getElementById('demontage').checked) price += 1050;
-      if (document.getElementById('concrete').checked && category !== 'doors' && category !== 'windows') {
-        price += (width * 1260);
-      }
-
-      document.getElementById('result').innerHTML = `<span class="final-sum">Приблизно ${Math.round(price)} грн</span>`;
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      updateCalc();
-    });
-
 
     const info = {
       doors: {
@@ -464,6 +430,70 @@
         ]
       }
     };
+    
+    // КАЛЬКУЛЯТОР ЛОГІКА
+    const calcMaterials = {
+      gates: { 'Профнастил': 2300, 'Євродошка': 3800, 'Ковка': 5500 },
+      fences: { 'Профнастил': 1150, 'Євродошка': 2100, 'Сітка': 850 },
+      canopies: { 'Профнастил': 1600, 'Полікарбонат': 2100 },
+      metal: { 'Стандарт': 1350, 'Посилена': 1900 }
+    };
+
+    function syncCalcFields(page) {
+      const c = document.getElementById('calc-cat-' + page).value;
+      const isD = (c === 'doors');
+      
+      if (isD) {
+        document.getElementById('calc-w-' + page).value = "1.0";
+        document.getElementById('calc-h-' + page).value = "2.0";
+      } else {
+        document.getElementById('calc-w-' + page).value = "3.0";
+        document.getElementById('calc-h-' + page).value = "2.0";
+      }
+
+      document.getElementById('calc-doors-ui-' + page).classList.toggle('calc-hidden', !isD);
+      document.getElementById('calc-mats-ui-' + page).classList.toggle('calc-hidden', isD);
+      document.getElementById('calc-beton-ui-' + page).classList.toggle('calc-hidden', isD);
+
+      const mSelect = document.getElementById('calc-mat-list-' + page);
+      mSelect.innerHTML = '';
+      if (calcMaterials[c]) {
+        for (let m in calcMaterials[c]) {
+          let opt = document.createElement('option');
+          opt.value = calcMaterials[c][m]; opt.text = m;
+          mSelect.add(opt);
+        }
+      }
+    }
+
+    function doCalc(page) {
+      const c = document.getElementById('calc-cat-' + page).value;
+      const w = parseFloat(document.getElementById('calc-w-' + page).value) || 0;
+      const h = parseFloat(document.getElementById('calc-h-' + page).value) || 0;
+      const area = w * h;
+      let total = 0;
+
+      if (c === 'doors') {
+        total = 10850; 
+        if (document.getElementById('calc-finish-' + page).value === 'mdf') total += 2450;
+        if (document.getElementById('calc-finish-' + page).value === 'paint') total += 1050;
+        if (document.getElementById('calc-loc-' + page).value === 'street') total *= 1.25;
+
+        const stdH = 2.0, stdW = 1.0;
+        if (h > stdH) total *= (1 + ((h - stdH) / 0.1 * 0.05));
+        if (w > stdW) total *= (1 + ((w - stdW) / 0.1 * 0.07));
+      } else {
+        let pricePerM2 = parseFloat(document.getElementById('calc-mat-list-' + page).value);
+        total = area * pricePerM2;
+        if (document.getElementById('calc-beton-' + page).checked) total += (w * 1350);
+      }
+
+      if (document.getElementById('calc-demo-' + page).checked) total += 1100;
+
+      const rb = document.getElementById('calc-res-box-' + page);
+      rb.style.display = 'block';
+      document.getElementById('calc-res-val-' + page).innerText = Math.round(total).toLocaleString() + ' грн';
+    }
 
     function showDetails(id) {
       currentCategory = id;
@@ -485,6 +515,7 @@
       });
       currentImages = data.sub.map((s, idx) => `${id}${idx + 1}.png`);
       document.getElementById('more-btn').onclick = () => showGallery(id);
+      syncCalcFields('details');
       window.scrollTo(0, 0);
     }
 
@@ -500,6 +531,7 @@
         grid.innerHTML += `<div class="sub-item"><div class="sub-card"><img src="${imgPath}" alt="Об'єкт ${i}" onclick="openSlider(${i - 1})" onerror="this.style.display='none'; this.parentElement.parentElement.style.display='none'"></div><div class="sub-title">Об'єкт ${i}</div></div>`;
       }
       currentImages = galleryImgs;
+      syncCalcFields('gallery');
       window.scrollTo(0, 0);
     }
 
