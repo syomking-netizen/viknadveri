@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="uk">
 <head>
@@ -57,7 +58,7 @@
       --bg-dark: #0f0f0f;
       --card-bg: #1a1a1a;
       --image-block-bg: #222222;
-      --text-main: rgba(200,200,200,0.95);
+      --text-main: rgba(190,190,190,0.85);
       --telegram-color: #0088cc;
       --border-color: #2a2a2a;
       --shadow-sm: 0 2px 8px rgba(0,0,0,0.4);
@@ -87,19 +88,63 @@
     .p-big { font-size: 1.35rem; margin: 0 1.3px; line-height: 1; }
     .p-accent { font-size: 0.97rem; margin: 0 1.3px; }
     @keyframes swing-continuous { 0%, 50%, 100% { transform: translateX(-50%) rotate(0deg); } 25% { transform: translateX(-50%) rotate(7deg); } 75% { transform: translateX(-50%) rotate(-7deg); } }
-    .container { width: 100%; max-width: 1100px; margin: 32px auto 0 auto; padding: 0 20px; box-sizing: border-box; flex: 1; position: relative; }
-    .card { display: flex; background: linear-gradient(145deg, #1d1d1d, #181818); margin-bottom: 28px; overflow: hidden; border: 1px solid var(--border-color); border-top: 1px solid #2d2d2d; box-shadow: var(--shadow-md); cursor: pointer; transition: all 0.35s cubic-bezier(0.4,0,0.2,1); border-radius: 2px; }
+    @media only screen and (max-width: 768px) {
+      :root {
+        --primary: #c41a1f;
+        --primary-hover: #a81519;
+        --promo-green-bright: rgb(35, 165, 90);
+        --promo-green-dark: #229963;
+      }
+      .feature-item::before { filter: drop-shadow(0 0 2px rgba(227, 30, 36, 0.25)); }
+      .promo-label { filter: drop-shadow(0 2px 4px rgba(46, 204, 113, 0.25)); }
+      .card-content h2 { opacity: 0.75; }
+      header h1 { text-shadow: 0 2px 8px rgba(0,0,0,0.5), 0 4px 18px rgba(0,0,0,0.35); }
+      .sub-header-top, .sub-header-bottom { text-shadow: 0 2px 6px rgba(0,0,0,0.4); }
+    }
+    .container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 5px auto 0 auto; /* ИЗМЕНЕНО: было margin: 32px auto 0 auto; */
+  padding: 0 20px;
+  box-sizing: border-box;
+  flex: 1;
+  position: relative;
+}
+
+.card {
+  display: flex;
+  background: linear-gradient(145deg, #1d1d1d, #181818);
+  margin: 0 0 10px 0; /* ИЗМЕНЕНО: было margin-bottom: 12px; */
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-top: 1px solid #2d2d2d;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+  border-radius: 2px;
+}
+
     .card:hover { transform: translateY(-2px); border-color: #404040; box-shadow: var(--shadow-lg); background: linear-gradient(145deg, #1e1e1e, #1a1a1a); }
     .card-image-wrapper { width: 40%; max-width: 420px; height: 280px; background: var(--image-block-bg); padding: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-sizing: border-box; transition: background 0.3s ease; }
     .card img { width: 100%; height: 100%; object-fit: cover; background: var(--image-block-bg); border: 1px solid #2d2d2d; pointer-events: none; object-position: center; max-width: 100%; filter: brightness(0.95) contrast(1.05); backface-visibility: hidden; -webkit-backface-visibility: hidden; transform: translateZ(0); -webkit-transform: translateZ(0); }
     .card:hover img { filter: brightness(0.95) contrast(1.05); }
-    .card-content { width: 60%; padding: 32px; display: flex; flex-direction: column; justify-content: center; align-items: center; box-sizing: border-box; text-align: center; }
+    .card-content {
+  width: 60%;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 2; /* ИЗМЕНЕНО: было margin-bottom: 10px; */
+}
     #main-page .card-content { text-align: left; align-items: flex-start; }
     #main-page .card-content h2 { text-align: left; }
-    .card-content h2 { font-family: 'Montserrat', sans-serif; color: var(--primary); margin: 0 0 16px 0; font-size: 1.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.15; opacity: 0.85; }
+    .card-content h2 { font-family: 'Montserrat', sans-serif; color: var(--primary); margin: 12px 0 12px 0; font-size: 1.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.15; opacity: 0.85; }
     #details-page #dynamic-header-block .card-content { text-align: left; align-items: flex-start; }
     #details-page #dynamic-header-block .card-content h2 { font-size: 1.76rem; }
-    #details-page #dynamic-header-block .card-content p { font-size: 0.85rem; line-height: 1.6; color: var(--text-main); margin: 8px 0 12px 0; }
+    #details-page #dynamic-header-block .card-content p { font-size: 0.85rem; line-height: 1.6; color: var(--text-main); margin: 12px 0 12px 0; opacity: 1; }
     .red-badge, .green-badge { display: inline-block; padding: 5px 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; border-radius: 3px; font-size: 0.7rem; line-height: 1; vertical-align: middle; margin-left: -10px; transition: all 0.3s ease; }
     .red-badge { background: rgba(227, 30, 36, 0.12); color: var(--primary); opacity: 0.85; box-shadow: inset 0 0 0 1px rgba(227, 30, 36, 0.15); }
     .green-badge { background: rgba(46,204,113,0.15); color: var(--promo-green-bright); box-shadow: inset 0 0 0 1px rgba(46,204,113,0.2); }
@@ -107,10 +152,11 @@
     .sub-item { display: flex; flex-direction: column; margin-bottom: 0; width: 100%; gap: 15px; }
     .sub-card { background: var(--image-block-bg); height: 0; padding-bottom: 60%; position: relative; display: block; cursor: pointer; transition: all 0.35s; overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); border-radius: 2px; }
     .sub-card img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: all 0.4s; filter: brightness(0.95) contrast(1.05); }
-    .sub-title { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--text-main); text-transform: none; margin-top: 0; text-align: center; font-weight: 400; line-height: 1.4; opacity: 1; display: block; width: 100%; }
-    .sub-desc { font-family: 'Inter', sans-serif; font-size: 0.75rem; color: rgba(200,200,200,0.95); text-align: center; line-height: 1.6; margin: 0; opacity: 0.75; }
+    .sub-title { font-family: 'Inter', sans-serif; font-size: 0.75rem; color: var(--text-main); text-transform: none; margin-top: 0; margin-bottom: 8px; text-align: center; font-weight: 600; line-height: 1.6; opacity: 1; display: block; width: 100%; }
+    .sub-desc { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--text-main); text-align: center; line-height: 1.6; margin: 0; opacity: 1; }
     .section-text { max-width: 800px; margin: 24px auto 16px; text-align: center; padding-top: 6px; padding-bottom: 6px; box-sizing: border-box; }
-    .section-text-desc, #main-page .card-content p { font-size: 0.85rem; line-height: 1.6; color: var(--text-main); margin: 8px 0 12px 0; }
+    .section-text-desc { font-size: 0.85rem; line-height: 1.6; color: var(--text-main); margin: 12px 0 12px 0; opacity: 1; }
+    #main-page .card-content p { font-size: 0.85rem; line-height: 1.6; color: var(--text-main); margin: 12px 0 12px 0; opacity: 1; }
     .section-text .red-badge { display: inline-block; margin-bottom: 8px; margin-left: 0; }
     #details-page { display: none; background: var(--card-bg); padding: 20px 20px 40px; border: 1px solid var(--border-color); width: 100%; box-sizing: border-box; box-shadow: var(--shadow-sm); border-radius: 2px; }
     #gallery-page { display: none; background: var(--card-bg); padding: 20px 20px 40px; border: 1px solid var(--border-color); width: 100%; box-sizing: border-box; box-shadow: var(--shadow-sm); border-radius: 2px; }
@@ -224,7 +270,7 @@
         </div>
       </div>
       <div class="card" id="card-gates" onclick="showDetails('gates')">
-        <div class="card-image-wrapper"><img src="gates.png" alt="Ворота та паркани Кропивницький под ключ" width="800" height="600" loading="lazy"></div>
+        <div class="card-image-wrapper"><img src="gates.png" alt="Ворота та паркани Кропивницький під ключ" width="800" height="600" loading="lazy"></div>
         <div class="card-content">
           <h2>ВОРОТА ПАРКАНИ НАВІСИ</h2>
           <div style="padding: 0;">
@@ -399,7 +445,7 @@
           { title: "Скління фасаду", desc: "Міцні металопластикові конструкції: сучасне скління для захисту вашого будинку." },
           { title: "Фарбування дверей", desc: "Покриття металу емаллю з молотковим ефектом. Ідеальне для вулиці та під'їзду." },
           { title: "Захисні решітки", desc: "Захист вашої оселі: сучасний дизайн та надійність фіксації." },
-          { title: "Господарські двері", desc: "Конструкції под будь-які потреби. З надійними засовами для господарських приміщень." },
+          { title: "Господарські двері", desc: "Конструкції під будь-які потреби. З надійними засовами для господарських приміщень." },
           { title: "Вікна індивідуальні", desc: "Монтаж нестандартних конструкцій. Цікаві рішення для ваших віконних форм." }
         ]
       },
@@ -415,7 +461,7 @@
       },
       structures: {
         sub: [
-          { title: "Торговий павільйон", desc: "Мобільні павільйони под ключ. З дверима, вікнами, ролетами, та утепленням." },
+          { title: "Торговий павільйон", desc: "Мобільні павільйони під ключ. З дверима, вікнами, ролетами, та утепленням." },
           { title: "Інтер'єрні сходи", desc: "Металеві сходи високої точності. Ідеальна якість та бездоганний зовнішній вигляд." },
           { title: "Вуличні сходи", desc: "Зручні та надійні вуличні сходи для підйому на другий поверх." },
           { title: "Тримач для гантелей", desc: "Компактна підставка оригінальної форми. Виготовлена за індивідуальним ескізом." },
