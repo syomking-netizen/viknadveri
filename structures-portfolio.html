@@ -6,245 +6,140 @@
   <title>Портфоліо Металоконструкції Кропивницький | Наші роботи</title>
   <meta name="description" content="Портфоліо виконаних робіт з виготовлення металоконструкцій у Кропивницькому. Торгові павільйони, сходи, вольєри, каркаси. Індивідуальні рішення під замовлення.">
   <link rel="canonical" href="https://viknadveri.online/structures-portfolio.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Портфоліо Металоконструкції Кропивницький">
+  <meta property="og:description" content="Галерея наших робіт: металоконструкції, павільйони, сходи у Кропивницькому. Фото проектів.">
+  <meta property="og:url" content="https://viknadveri.online/structures-portfolio.html">
+  <meta property="og:image" content="https://viknadveri.online/structures1.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9TLTR9L86"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G9TLTR9L86');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Портфоліо Металоконструкції",
+    "description": "Фотогалерея виконаних робіт з виготовлення металоконструкцій у Кропивницькому",
+    "creator": {
+      "@type": "Organization",
+      "name": "ФОП Сьомкін П.В."
+    }
+  }
+  </script>
   <style>
     :root {
       --primary: #e31e24;
       --promo-green-bright: rgb(46, 204, 113);
       --bg-dark: #0f0f0f;
+      --card-bg: #1a1a1a;
       --image-block-bg: #222222;
       --text-main: rgba(190,190,190,0.85);
+      --telegram-color: #0088cc;
       --border-color: #2a2a2a;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.4);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.5);
       --shadow-lg: 0 16px 48px rgba(0,0,0,0.6);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg-dark); color: var(--text-main); line-height: 1.65; min-height: 100vh; }
     .container { max-width: 1100px; margin: 0 auto; padding: 32px 20px; }
-    .back-btn { 
-      position: fixed; bottom: 20px; left: 20px; 
-      background: rgba(227,30,36,0.9); color: #fff; 
-      padding: 11px 22px; border: none; border-radius: 3px; 
-      font-weight: 700; text-transform: uppercase; font-size: 0.75rem; 
-      cursor: pointer; z-index: 100; transition: all 0.3s; 
-      text-decoration: none; display: inline-block; 
-    }
+    .back-btn { position: fixed; bottom: 20px; left: 20px; background: rgba(227,30,36,0.9); color: #fff; padding: 11px 22px; border: none; border-radius: 3px; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; cursor: pointer; z-index: 100; transition: all 0.3s; text-decoration: none; display: inline-block; }
     .back-btn:hover { background: var(--primary); transform: translateY(-1px); }
-    .section-title { 
-      color: var(--primary); font-family: 'Montserrat', sans-serif; 
-      text-transform: uppercase; font-size: clamp(1.4rem, 5vw, 2rem); 
-      font-weight: 700; letter-spacing: 0.5px; 
-      margin: 10px 0 32px 0; text-align: center; opacity: 0.85; 
-    }
+    .section-title { color: var(--primary); font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-size: clamp(1.4rem, 5vw, 2rem); font-weight: 700; letter-spacing: 0.5px; margin: 10px 0 32px 0; text-align: center; opacity: 0.85; }
     .sub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    
-    .sub-item { 
-      display: flex; 
-      flex-direction: column; 
-      gap: 3px; 
-    }
-    
-    .sub-card { 
-      background: var(--image-block-bg); 
-      height: 0; 
-      padding-bottom: 60%; 
-      position: relative; 
-      cursor: pointer; 
-      overflow: hidden; 
-      border: 1px solid var(--border-color); 
-      border-radius: 2px; 
-      transition: all 0.3s; 
-    }
+    .sub-item { display: flex; flex-direction: column; gap: 4px; }
+    .sub-card { background: var(--image-block-bg); height: 0; padding-bottom: 60%; position: relative; cursor: pointer; overflow: hidden; border: 1px solid var(--border-color); border-radius: 2px; transition: all 0.3s; margin-bottom: 0; }
     .sub-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-    .sub-card img { 
-      position: absolute; 
-      top: 0; left: 0; 
-      width: 100%; height: 100%; 
-      object-fit: cover; 
-      filter: brightness(0.95) contrast(1.05); 
-    }
-    
-    .sub-title { 
-      font-size: 0.8rem; 
-      font-weight: 400; 
-      color: var(--text-main); 
-      line-height: 1.4; 
-      text-align: left; 
-      margin: 4px 8px 0 8px; 
-      padding: 0; 
-    }
-    
-    .price-line { 
-      text-align: right !important; 
-      align-self: flex-end; 
-      margin: -2px 8px 8px 8px; 
-      padding: 0 0 6px 0; 
-      font-size: 0.8rem; 
-      color: var(--text-main); 
-      line-height: 1.2; 
-    }
-    
-    .green-badge { 
-      display: inline-block; 
-      padding: 3px 8px; 
-      font-weight: 700; 
-      text-transform: uppercase; 
-      letter-spacing: 0.8px; 
-      border-radius: 3px; 
-      font-size: 0.75rem; 
-      background: rgba(46,204,113,0.15); 
-      color: var(--promo-green-bright); 
-      box-shadow: inset 0 0 0 1px rgba(46,204,113,0.2); 
-      line-height: 1.1; 
-    }
-
-    footer { 
-      width: 100%; background: #080808; 
-      padding: 42px 0; border-top: 1px solid var(--border-color); 
-      text-align: center; margin-top: 60px; 
-    }
-    footer a { 
-      color: inherit; text-decoration: none; 
-      font-weight: 600; font-size: 0.9rem; 
-      display: inline-block; margin: 10px 0; 
-    }
+    .sub-card img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.95) contrast(1.05); }
+    .sub-title { font-size: 0.8rem; font-weight: 400; color: var(--text-main); line-height: 1.4; text-align: center; margin: 0; padding: 0; }
+    .price-line { text-align: right; margin: 0; padding: 0; font-size: 0.8rem; color: var(--text-main); line-height: 1.2; }
+    .green-badge { display: inline-block; padding: 3px 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; border-radius: 3px; font-size: 0.75rem; background: rgba(46,204,113,0.15); color: var(--promo-green-bright); box-shadow: inset 0 0 0 1px rgba(46,204,113,0.2); line-height: 1.1; }
+    .sub-desc { font-size: 0.8rem; line-height: 1.6; color: var(--text-main); text-align: center; margin: 0; }
+    #modal { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.96); justify-content: center; align-items: center; }
+    .modal-container { position: relative; width: 95vw; height: 85vh; display: flex; align-items: center; justify-content: center; }
+    #modal img { max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: var(--shadow-lg); }
+    .close-modal { position: absolute; top: -50px; right: 0; color: #fff; font-size: 40px; cursor: pointer; transition: all 0.3s; }
+    .nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: #fff; border: none; width: 50px; height: 50px; font-size: 1.6rem; cursor: pointer; border-radius: 50%; transition: all 0.3s; }
+    .nav-arrow:hover { background: rgba(255,255,255,0.18); transform: translateY(-50%) scale(1.05); }
+    footer { width: 100%; background: #080808; padding: 42px 0; border-top: 1px solid var(--border-color); text-align: center; margin-top: 60px; }
+    footer a { color: inherit; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-block; margin: 10px 0; }
     footer a:hover { color: var(--primary); }
     .footer-sub-text { font-size: 0.8rem; color: #505050; margin-bottom: 6px; }
-
-    #modal { 
-      display: none; position: fixed; z-index: 9999; 
-      top: 0; left: 0; width: 100%; height: 100%; 
-      background: rgba(0,0,0,0.96); 
-      justify-content: center; align-items: center; 
+    @media (max-width: 900px) {
+      .sub-grid { grid-template-columns: 1fr; }
     }
-    .modal-container { 
-      position: relative; width: 95vw; height: 85vh; 
-      display: flex; align-items: center; justify-content: center; 
-    }
-    #modal img { 
-      max-width: 100%; max-height: 100%; 
-      object-fit: contain; box-shadow: var(--shadow-lg); 
-    }
-    .close-modal { 
-      position: absolute; top: -50px; right: 0; 
-      color: #fff; font-size: 40px; cursor: pointer; 
-      transition: all 0.3s; 
-    }
-    .nav-arrow { 
-      position: absolute; top: 50%; transform: translateY(-50%); 
-      background: rgba(0,0,0,0.5); color: #fff; border: none; 
-      width: 50px; height: 50px; font-size: 1.6rem; cursor: pointer; 
-      border-radius: 50%; transition: all 0.3s; 
-    }
-    .nav-arrow:hover { 
-      background: rgba(255,255,255,0.18); 
-      transform: translateY(-50%) scale(1.05); 
-    }
-
-    @media (max-width: 900px) { .sub-grid { grid-template-columns: 1fr; } }
     @media (max-width: 600px) {
       .container { padding: 32px 8px; }
       .sub-card { padding-bottom: 78%; }
       .back-btn { left: 12px; bottom: 12px; }
-      .sub-title, .price-line { margin-left: 12px; margin-right: 12px; }
     }
   </style>
 </head>
 <body>
   <a href="structures.html" class="back-btn">← Назад</a>
-
+  
   <div class="container">
     <h2 class="section-title">Портфоліо — Металоконструкції</h2>
-
+    
     <div class="sub-grid">
-
-      <!-- 01 -->
       <div class="sub-item">
         <div class="sub-card" onclick="openModal(0)"><img src="structures1.png" alt="Портфоліо 01" loading="lazy"></div>
-        <div class="sub-title">01 - Модульна конструкція з вікнами та дверима. Виконання робіт різного формату та розмірів.</div>
-        <div class="price-line">від <span class="green-badge">6000 грн/м²</span></div>
+        <div class="sub-title">01 - Модульна конструкція з вікнами та дверима. Виконання робіт різного формату та розмірів. від <span class="green-badge">6000 грн/м<sup>2</sup></span></div>
       </div>
-
-      <!-- 02 -->
       <div class="sub-item">
         <div class="sub-card" onclick="openModal(1)"><img src="structures2.png" alt="Портфоліо 02" loading="lazy"></div>
-        <div class="sub-title">02 - Конструкція перил та огородження сходів у сучасному стилі - Кропивницький 2025.</div>
-        <div class="price-line">від <span class="green-badge">100000 грн</span></div>
+        <div class="sub-title">02 - Конструкція перил та огородження сходів у сучасному стилі - Кропивницький 2025.</div><div class="price-line">від <span class="green-badge">100000 грн</span></div>
       </div>
-
-      <!-- 03 -->
       <div class="sub-item">
         <div class="sub-card" onclick="openModal(2)"><img src="structures3.png" alt="Портфоліо 03" loading="lazy"></div>
-        <div class="sub-title">03 - Маршові поворотні сходи на другий поверх з проміжною площадкою.</div>
-        <div class="price-line">від <span class="green-badge">70000 грн</span></div>
+        <div class="sub-title">03 - Маршові поворотні сходи на другий поверх з проміжною площадкою.</div><div class="price-line">від <span class="green-badge">70000 грн</span></div>
       </div>
-
-      <!-- 04 -->
       <div class="sub-item">
         <div class="sub-card" onclick="openModal(3)"><img src="structures4.png" alt="Портфоліо 04" loading="lazy"></div>
-        <div class="sub-title">04 - Міцна конструкція для домашнього спортзалу. Встановлена в кімнаті з фіксацією до підлоги - Кропивницький 2025.</div>
-        <div class="price-line">від <span class="green-badge">14000 грн</span></div>
+        <div class="sub-title">04 - Міцна конструкція для домашнього спортзалу. Встановлена в кімнаті з фіксацією до підлоги - Кропивницький 2025.</div><div class="price-line">від <span class="green-badge">14000 грн</span></div>
       </div>
-
-      <!-- 05 -->
       <div class="sub-item">
         <div class="sub-card" onclick="openModal(4)"><img src="structures5.png" alt="Портфоліо 05" loading="lazy"></div>
-        <div class="sub-title">05 - Вольєр для собак з профнастилу та сітки. Надійний та комфортний для тварини.</div>
-        <div class="price-line">від <span class="green-badge">3000 грн/м²</span></div>
+        <div class="sub-title">05 - Вольєр для собак з профнастилу та сітки. Надійний та комфортний для тварини. від <span class="green-badge">3000 грн/м<sup>2</sup></span></div>
       </div>
-
-      <!-- 06 -->
       <div class="sub-item">
         <div class="sub-card" onclick="openModal(5)"><img src="structures6.png" alt="Портфоліо 06" loading="lazy"></div>
-        <div class="sub-title">06 - Каркас для елементу сучасного дизайну біля вікна - Кропивницький 2025.</div>
-        <div class="price-line">від <span class="green-badge">7500 грн</span></div>
+        <div class="sub-title">06 - Каркас для елементу сучасного дизайну біля вікна - Кропивницький 2025.</div><div class="price-line">від <span class="green-badge">7500 грн</span></div>
       </div>
-
-      <!-- 07 -->
       <div class="sub-item">
         <div class="sub-card" onclick="openModal(6)"><img src="structures7.png" alt="Портфоліо 07" loading="lazy"></div>
-        <div class="sub-title">07 - Конструкція перил та огородження сходів у сучасному стилі (вид знизу) - Кропивницький 2025.</div>
-        <div class="price-line">від <span class="green-badge">100000 грн</span></div>
+        <div class="sub-title">07 - Конструкція перил та огородження сходів у сучасному стилі (вид знизу) - Кропивницький 2025.</div><div class="price-line">від <span class="green-badge">100000 грн</span></div>
       </div>
-
-      <!-- 08 -->
       <div class="sub-item">
         <div class="sub-card" onclick="openModal(7)"><img src="structures8.png" alt="Портфоліо 08" loading="lazy"></div>
-        <div class="sub-title">08 - Конструкція перил та огородження сходів у сучасному стилі (сходи).</div>
-        <div class="price-line">від <span class="green-badge">100000 грн</span></div>
+        <div class="sub-title">08 - Конструкція перил та огородження сходів у сучасному стилі (сходи).</div><div class="price-line">від <span class="green-badge">100000 грн</span></div>
       </div>
-
-      <!-- 09 -->
       <div class="sub-item">
         <div class="sub-card" onclick="openModal(8)"><img src="structures9.png" alt="Портфоліо 09" loading="lazy"></div>
-        <div class="sub-title">09 - Конструкція перил та огородження сходів у сучасному стилі (вид збоку).</div>
-        <div class="price-line">від <span class="green-badge">100000 грн</span></div>
+        <div class="sub-title">09 - Конструкція перил та огородження сходів у сучасному стилі (вид збоку).</div><div class="price-line">від <span class="green-badge">100000 грн</span></div>
       </div>
-
-      <!-- 10 -->
       <div class="sub-item">
         <div class="sub-card" onclick="openModal(9)"><img src="structures10.png" alt="Портфоліо 10" loading="lazy"></div>
-        <div class="sub-title">10 - Стелаж складський. З посиленими полицями та мобільною основою.</div>
-        <div class="price-line">від <span class="green-badge">7000 грн</span></div>
+        <div class="sub-title">10 - Стелаж складський. З посиленими полицями та мобільною основою.</div><div class="price-line">від <span class="green-badge">7000 грн</span></div>
       </div>
-
-      <!-- 11 -->
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(10)"><img src="structures11.png" alt="Портфоліо 11" loading="lazy"></div>
+        <div class="sub-title">11 - Металева конструкція спеціального призначення - Кропивницький 2025. <span class="sub-desc">Ціна за домовленістю</span></div>
+      </div>
       <div class="sub-item">
         <div class="sub-card" onclick="openModal(11)"><img src="structures12.png" alt="Портфоліо 12" loading="lazy"></div>
-        <div class="sub-title">ТЕСТ</div>
-        <div class="price-line">від <span class="green-badge">3800 грн/м²</span></div>
+        <div class="sub-title">12 - Навіс з профнастилу для захисту подвіря в приватному секторі - Кропивницький 2025. від <span class="green-badge">3800 грн/м<sup>2</sup></span></div>
       </div>
-
-      <!-- 12 -->
-      <div class="sub-item">
-        <div class="sub-card" onclick="openModal(11)"><img src="structures12.png" alt="Портфоліо 12" loading="lazy"></div>
-        <div class="sub-title">12 - Навіс з профнастилу для захисту подвір'я в приватному секторі - Кропивницький 2025.</div>
-        <div class="price-line">від <span class="green-badge">3800 грн/м²</span></div>
-      </div>
-
     </div>
   </div>
 
