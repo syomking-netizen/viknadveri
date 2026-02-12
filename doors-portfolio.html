@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Портфоліо Вікна та Двері Кропивницький | Наші роботи</title>
+  <meta name="description" content="Портфоліо виконаних робіт з встановлення вікон та дверей у Кропивницькому. Металопластикові вікна, металеві двері, захисні решітки.">
+  <link rel="canonical" href="https://viknadveri.online/doors-portfolio.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    :root {
+      --primary: #e31e24;
+      --promo-green-bright: rgb(46, 204, 113);
+      --bg-dark: #0f0f0f;
+      --image-block-bg: #222222;
+      --text-main: rgba(190,190,190,0.85);
+      --border-color: #2a2a2a;
+      --shadow-lg: 0 16px 48px rgba(0,0,0,0.6);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg-dark); color: var(--text-main); line-height: 1.65; min-height: 100vh; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 32px 20px; }
+    .back-btn { 
+      position: fixed; bottom: 20px; left: 20px; 
+      background: rgba(227,30,36,0.9); color: #fff; 
+      padding: 11px 22px; border: none; border-radius: 3px; 
+      font-weight: 700; text-transform: uppercase; font-size: 0.75rem; 
+      cursor: pointer; z-index: 100; transition: all 0.3s; 
+      text-decoration: none; display: inline-block; 
+    }
+    .back-btn:hover { background: var(--primary); transform: translateY(-1px); }
+    .section-title { 
+      color: var(--primary); font-family: 'Montserrat', sans-serif; 
+      text-transform: uppercase; font-size: clamp(1.4rem, 5vw, 2rem); 
+      font-weight: 700; letter-spacing: 0.5px; 
+      margin: 10px 0 32px 0; text-align: center; opacity: 0.85; 
+    }
+    .sub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    
+    .sub-item { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 3px; 
+    }
+    
+    .sub-card { 
+      background: var(--image-block-bg); 
+      height: 0; 
+      padding-bottom: 60%; 
+      position: relative; 
+      cursor: pointer; 
+      overflow: hidden; 
+      border: 1px solid var(--border-color); 
+      border-radius: 2px; 
+      transition: all 0.3s; 
+    }
+    .sub-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .sub-card img { 
+      position: absolute; 
+      top: 0; left: 0; 
+      width: 100%; height: 100%; 
+      object-fit: cover; 
+      filter: brightness(0.95) contrast(1.05); 
+    }
+    
+    .sub-title { 
+      font-size: 0.8rem; 
+      font-weight: 400; 
+      color: var(--text-main); 
+      line-height: 1.4; 
+      text-align: left; 
+      margin: 4px 8px 0 8px; 
+      padding: 0; 
+    }
+    
+    .price-line { 
+      text-align: right !important; 
+      align-self: flex-end; 
+      margin: -2px 8px 8px 8px; 
+      padding: 0 0 6px 0; 
+      font-size: 0.8rem; 
+      color: var(--text-main); 
+      line-height: 1.2; 
+    }
+    
+    .green-badge { 
+      display: inline-block; 
+      padding: 3px 8px; 
+      font-weight: 700; 
+      text-transform: uppercase; 
+      letter-spacing: 0.8px; 
+      border-radius: 3px; 
+      font-size: 0.75rem; 
+      background: rgba(46,204,113,0.15); 
+      color: var(--promo-green-bright); 
+      box-shadow: inset 0 0 0 1px rgba(46,204,113,0.2); 
+      line-height: 1.1; 
+    }
+
+    footer { 
+      width: 100%; background: #080808; 
+      padding: 42px 0; border-top: 1px solid var(--border-color); 
+      text-align: center; margin-top: 60px; 
+    }
+    footer a { 
+      color: inherit; text-decoration: none; 
+      font-weight: 600; font-size: 0.9rem; 
+      display: inline-block; margin: 10px 0; 
+    }
+    footer a:hover { color: var(--primary); }
+    .footer-sub-text { font-size: 0.8rem; color: #505050; margin-bottom: 6px; }
+
+    #modal { 
+      display: none; position: fixed; z-index: 9999; 
+      top: 0; left: 0; width: 100%; height: 100%; 
+      background: rgba(0,0,0,0.96); 
+      justify-content: center; align-items: center; 
+    }
+    .modal-container { 
+      position: relative; width: 95vw; height: 85vh; 
+      display: flex; align-items: center; justify-content: center; 
+    }
+    #modal img { 
+      max-width: 100%; max-height: 100%; 
+      object-fit: contain; box-shadow: var(--shadow-lg); 
+    }
+    .close-modal { 
+      position: absolute; top: -50px; right: 0; 
+      color: #fff; font-size: 40px; cursor: pointer; 
+      transition: all 0.3s; 
+    }
+    .nav-arrow { 
+      position: absolute; top: 50%; transform: translateY(-50%); 
+      background: rgba(0,0,0,0.5); color: #fff; border: none; 
+      width: 50px; height: 50px; font-size: 1.6rem; cursor: pointer; 
+      border-radius: 50%; transition: all 0.3s; 
+    }
+    .nav-arrow:hover { 
+      background: rgba(255,255,255,0.18); 
+      transform: translateY(-50%) scale(1.05); 
+    }
+
+    @media (max-width: 900px) { .sub-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) {
+      .container { padding: 32px 8px; }
+      .sub-card { padding-bottom: 78%; }
+      .back-btn { left: 12px; bottom: 12px; }
+      .sub-title, .price-line { margin-left: 12px; margin-right: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="doors.html" class="back-btn">← Назад</a>
+
+  <div class="container">
+    <h2 class="section-title">Портфоліо — Вікна та Двері</h2>
+
+    <div class="sub-grid">
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(0)"><img src="doors1.png" alt="Портфоліо 01" loading="lazy"></div>
+        <div class="sub-title">01 - Вхідні металеві двері з еко-шкірою коричневого кольору. Хромована фурнітура, надійний замок, стильний зовнішній вигляд. Монтаж під ключ в Кропивницькому.</div>
+        <div class="price-line">від <span class="green-badge">14000 грн</span></div>
+      </div>
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(1)"><img src="doors2.png" alt="Портфоліо 02" loading="lazy"></div>
+        <div class="sub-title">02 - Металопластиковий еркер (виносний балкон) білого кольору. Тепле багатотурне засклення з якісним профілем, двома дверима та великими вікнами.</div>
+        <div class="price-line">від <span class="green-badge">7000 грн/м²</span></div>
+      </div>
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(2)"><img src="doors3.png" alt="Портфоліо 03" loading="lazy"></div>
+        <div class="sub-title">03 - Вуличні металеві двері графітового кольору з молотковим покриттям. Міцна конструкція та надійний замок.</div>
+        <div class="price-line">від <span class="green-badge">14500 грн</span></div>
+      </div>
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(3)"><img src="doors4.png" alt="Портфоліо 04" loading="lazy"></div>
+        <div class="sub-title">04 - Захисна решітка на вікно, металева міцна конструкція з елементами ковки.</div>
+        <div class="price-line">від <span class="green-badge">1600 грн/м²</span></div>
+      </div>
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(4)"><img src="doors5.png" alt="Портфоліо 05" loading="lazy"></div>
+        <div class="sub-title">05 - Господарські двері металеві, фарбовані, з надійним засовом та замком.</div>
+        <div class="price-line">від <span class="green-badge">12500 грн</span></div>
+      </div>
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(5)"><img src="doors6.png" alt="Портфоліо 06" loading="lazy"></div>
+        <div class="sub-title">06 - Захисна решітка та арочне вікно, нестандартний профіль та надійна фіксація - Кропивницький 2025.</div>
+        <div class="price-line">від <span class="green-badge">2300 грн/м²</span></div>
+      </div>
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(6)"><img src="doors7.png" alt="Портфоліо 07" loading="lazy"></div>
+        <div class="sub-title">07 - Металеві двері для офісу - Кропивницький 2025.</div>
+        <div class="price-line">від <span class="green-badge">14500 грн</span></div>
+      </div>
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(7)"><img src="doors8.png" alt="Портфоліо 08" loading="lazy"></div>
+        <div class="sub-title">08 - Двостулкові металеві двері в тамбур. Надійний захист, якісне виконання робіт.</div>
+        <div class="price-line">від <span class="green-badge">18500 грн</span></div>
+      </div>
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(8)"><img src="doors9.png" alt="Портфоліо 09" loading="lazy"></div>
+        <div class="sub-title">09 - Квартирні двері з металу, з використанням якісних замків.</div>
+        <div class="price-line">від <span class="green-badge">14000 грн</span></div>
+      </div>
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(9)"><img src="doors10.png" alt="Портфоліо 10" loading="lazy"></div>
+        <div class="sub-title">10 - Металеві двері для приватного будинку - Кропивницький 2025.</div>
+        <div class="price-line">від <span class="green-badge">16000 грн</span></div>
+      </div>
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(10)"><img src="doors11.png" alt="Портфоліо 11" loading="lazy"></div>
+        <div class="sub-title">11 - Вуличні двері з якісним фарбуванням (сірий металік) та індивідуальним підбором фурнітури.</div>
+        <div class="price-line">від <span class="green-badge">14500 грн</span></div>
+      </div>
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(11)"><img src="doors12.png" alt="Портфоліо 12" loading="lazy"></div>
+        <div class="sub-title">12 - Двері металеві вид зі сторони під'їзду з двома замками та молотковим покриттям.</div>
+        <div class="price-line">від <span class="green-badge">15000 грн</span></div>
+      </div>
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(12)"><img src="doors13.png" alt="Портфоліо 13" loading="lazy"></div>
+        <div class="sub-title">13 - Двостулкові двері в під'їзд з кодовим замком.</div>
+        <div class="price-line">від <span class="green-badge">18000 грн</span></div>
+      </div>
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(13)"><img src="doors14.png" alt="Портфоліо 14" loading="lazy"></div>
+        <div class="sub-title">14 - Вуличні двері з якісним фарбуванням (сірий металік) та індивідуальним підбором фурнітури.</div>
+        <div class="price-line">від <span class="green-badge">14500 грн</span></div>
+      </div>
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(14)"><img src="doors15.png" alt="Портфоліо 15" loading="lazy"></div>
+        <div class="sub-title">15 - Металеві двері для приватного будинку - Кропивницький 2025.</div>
+        <div class="price-line">від <span class="green-badge">16000 грн</span></div>
+      </div>
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(15)"><img src="doors16.png" alt="Портфоліо 16" loading="lazy"></div>
+        <div class="sub-title">16 - Квартирні двері з металу, з використанням якісних замків.</div>
+        <div class="price-line">від <span class="green-badge">14000 грн</span></div>
+      </div>
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(16)"><img src="doors17.png" alt="Портфоліо 17" loading="lazy"></div>
+        <div class="sub-title">17 - Двостулкові металеві двері в тамбур. Надійний захист, якісне виконання робіт.</div>
+        <div class="price-line">від <span class="green-badge">18500 грн</span></div>
+      </div>
+      <div class="sub-item">
+        <div class="sub-card" onclick="openModal(17)"><img src="doors18.png" alt="Портфоліо 18" loading="lazy"></div>
+        <div class="sub-title">18 - Металеві двері для офісу - Кропивницький 2025.</div>
+        <div class="price-line">від <span class="green-badge">14500 грн</span></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-sub-text">Вікна Двері Ворота Кропивницький</div>
+    <div class="footer-sub-text">ФОП Сьомкін П. В. — Власне виробництво</div>
+    <a href="tel:0994714483">099 471 44 83</a>
+    <div class="footer-sub-text">вул. Вербицького, 5, Кропивницький</div>
+    <div class="footer-sub-text">© 2026 viknadveri.online</div>
+  </footer>
+
+  <div id="modal" onclick="closeModal()">
+    <div class="modal-container">
+      <span class="close-modal">×</span>
+      <button class="nav-arrow" style="left: 10px;" onclick="event.stopPropagation(); changeSlide(-1)">❮</button>
+      <img id="modal-img" src="" alt="Фото">
+      <button class="nav-arrow" style="right: 10px;" onclick="event.stopPropagation(); changeSlide(1)">❯</button>
+    </div>
+  </div>
+
+  <script>
+    const images = Array.from({length: 18}, (_, i) => `doors${i+1}.png`);
+    let currentIndex = 0;
+    
+    function openModal(index) {
+      currentIndex = index;
+      document.getElementById('modal').style.display = 'flex';
+      document.getElementById('modal-img').src = images[currentIndex];
+    }
+    
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+    
+    function changeSlide(direction) {
+      currentIndex = (currentIndex + direction + images.length) % images.length;
+      document.getElementById('modal-img').src = images[currentIndex];
+    }
+  </script>
+</body>
+</html>

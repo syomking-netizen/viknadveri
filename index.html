@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="uk">
 <head>
@@ -107,108 +106,46 @@
     .card-image-wrapper { width: 40%; max-width: 420px; height: 280px; background: var(--image-block-bg); padding: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-sizing: border-box; transition: background 0.3s ease; }
     .card img { width: 100%; height: 100%; object-fit: cover; background: var(--image-block-bg); border: 1px solid #2d2d2d; pointer-events: none; object-position: center; max-width: 100%; filter: brightness(0.95) contrast(1.05); backface-visibility: hidden; -webkit-backface-visibility: hidden; transform: translateZ(0); -webkit-transform: translateZ(0); }
     .card:hover img { filter: brightness(0.95) contrast(1.05); }
-    .card-content { width: 60%; padding: 32px; display: flex; flex-direction: column; justify-content: center; align-items: center; box-sizing: border-box; text-align: center; }
-    #main-page .card-content { text-align: left; align-items: flex-start; }
-    #main-page .card-content h2 { text-align: left; }
+    .card-content { width: 60%; padding: 32px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; box-sizing: border-box; text-align: left; }
     .card-content h2 { font-family: 'Montserrat', sans-serif; color: var(--primary); margin: 12px 0 12px 0; font-size: 1.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.15; opacity: 0.85; }
-    #details-page #dynamic-header-block .card-content { text-align: left; align-items: flex-start; }
-    #details-page #dynamic-header-block .card-content h2 { font-size: 1.76rem; }
-    #details-page #dynamic-header-block .card-content p { font-size: 0.85rem; line-height: 1.6; color: var(--text-main); margin: 12px 0 12px 0; opacity: 1; }
+    .card-content p { font-size: 0.8rem !important; line-height: 1.8 !important; color: var(--text-main) !important; margin: 0 0 10px 0; }
     .red-badge, .green-badge { display: inline-block; padding: 5px 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; border-radius: 3px; font-size: 0.7rem; line-height: 1; vertical-align: middle; margin-left: -10px; transition: all 0.3s ease; }
-    .red-badge { background: rgba(227, 30, 36, 0.12); color: var(--primary); opacity: 0.85; box-shadow: inset 0 0 0 1px rgba(227, 30, 36, 0.15); }
+    .red-badge { background: rgba(227, 30, 36, 0.12); color: var(--primary); opacity: 0.85; box-shadow: inset 0 0 0 1px rgba(227, 30, 36, 0.15); margin-bottom: 15px; display: inline-block; }
     .green-badge { background: rgba(46,204,113,0.15); color: var(--promo-green-bright); box-shadow: inset 0 0 0 1px rgba(46,204,113,0.2); }
-    .sub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 32px; width: 100%; }
-    .sub-item { display: flex; flex-direction: column; margin-bottom: 0; width: 100%; gap: 15px; }
-    .sub-card { background: var(--image-block-bg); height: 0; padding-bottom: 60%; position: relative; display: block; cursor: pointer; transition: all 0.35s; overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); border-radius: 2px; }
-    .sub-card img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: all 0.4s; filter: brightness(0.95) contrast(1.05); }
-    .sub-title { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--text-main); text-transform: none; margin-top: 0; margin-bottom: 8px; text-align: center; font-weight: 600; line-height: 1.6; opacity: 1; display: block; width: 100%; }
-    .sub-desc { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--text-main); text-align: center; line-height: 1.6; margin: 0; opacity: 1; }
-    .section-text { max-width: 800px; margin: 24px auto 16px; text-align: center; padding-top: 6px; padding-bottom: 6px; box-sizing: border-box; }
-    .section-text-desc { font-size: 0.85rem; line-height: 1.6; color: var(--text-main); margin: 12px 0 12px 0; opacity: 1; }
-    #main-page .card-content p { font-size: 0.85rem; line-height: 1.6; color: var(--text-main); margin: 12px 0 12px 0; opacity: 1; }
-    .section-text .red-badge { display: inline-block; margin-bottom: 8px; margin-left: 0; }
-    #details-page { display: none; background: var(--card-bg); padding: 20px 20px 40px; border: 1px solid var(--border-color); width: 100%; box-sizing: border-box; box-shadow: var(--shadow-sm); border-radius: 2px; }
-    #gallery-page { display: none; background: var(--card-bg); padding: 20px 20px 40px; border: 1px solid var(--border-color); width: 100%; box-sizing: border-box; box-shadow: var(--shadow-sm); border-radius: 2px; }
-    .section-title { color: var(--primary); font-family: 'Montserrat'; text-transform: uppercase; font-size: clamp(1.4rem, 5vw, 2rem); font-weight: 700; letter-spacing: 0.5px; margin: 10px 0 32px 0; text-align: center; width: 100%; opacity: 0.85; }
-    .back-btn { position: fixed; bottom: 20px; z-index: 2000; left: 20px; background: rgba(227,30,36,0.9); border: 1px solid rgba(227,30,36,0.9); color: #fff; padding: 11px 22px; border-radius: 3px; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; cursor: pointer; box-shadow: var(--shadow-md); transition: all 0.3s cubic-bezier(0.4,0,0.2,1); backdrop-filter: blur(8px); }
-    .back-btn:hover { background: var(--primary); border-color: var(--primary); transform: translateY(-1px); box-shadow: var(--shadow-lg); }
-    .bottom-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px; }
-    .action-btn { display: flex; align-items: center; justify-content: center; background: #252525; color: #fff; text-decoration: none; padding: 15px 8px; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; border: 1px solid var(--border-color); border-radius: 3px; transition: all 0.3s; box-shadow: var(--shadow-sm); }
-    .action-btn:hover { background: #2d2d2d; border-color: #404040; transform: translateY(-2px); box-shadow: var(--shadow-md); }
-    .action-btn#more-btn { background: rgba(46,204,113,0.36); color: #ffffff; border-color: rgba(46,204,113,0.24); box-shadow: 0 6px 18px rgba(46,204,113,0.06); }
-    .action-btn#more-btn:hover { background: rgba(46,204,113,0.56); border-color: rgba(46,204,113,0.8); }
     .map-section { width: 100%; margin: 12px 0 0 0; padding: 0; text-align: center; position: relative; }
     .map-label { position: absolute; top: 16px; left: 16px; background: rgba(15,15,15,0.94); color: #fff; padding: 9px 16px; font-size: 0.75rem; font-weight: 600; border: 1px solid var(--border-color); border-radius: 3px; z-index: 10; backdrop-filter: blur(6px); box-shadow: var(--shadow-sm); }
     .map-container { width: 100%; height: 280px; border: 1px solid var(--border-color); background: #000; overflow: hidden; box-shadow: var(--shadow-sm); border-radius: 2px; }
     .map-container iframe { width: 100%; height: 100%; border: none; filter: grayscale(1) invert(0.92) contrast(1.2); }
+    .section-text { margin: 30px auto 40px auto; text-align: center; max-width: 800px; padding: 0 20px; }
+    .section-text-desc { font-size: 0.8rem !important; line-height: 1.8 !important; color: var(--text-main) !important; margin: 0 0 15px 0; }
     footer { width: 100%; background: #080808; padding: 42px 0; border-top: 1px solid var(--border-color); text-align: center; box-sizing: border-box; box-shadow: 0 -4px 12px rgba(0,0,0,0.3); }
     footer a { color: inherit; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-block; margin: 10px 0; transition: color 0.3s ease; }
     footer a:hover { color: var(--primary); }
     .footer-sub-text { font-size: 0.8rem; color: #505050; display: block; margin-bottom: 6px; letter-spacing: 0.2px; }
-    #modal { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.96); justify-content: center; align-items: center; backdrop-filter: blur(2px); }
-    .modal-container { position: relative; width: 95vw; height: 85vh; display: flex; align-items: center; justify-content: center; }
-    #modal img { max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: var(--shadow-lg); }
-    .close-modal { position: absolute; top: -50px; right: 0; color: #fff; font-size: 40px; cursor: pointer; transition: all 0.3s; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6)); }
-    .nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: #fff; border: none; width: 50px; height: 50px; font-size: 1.6rem; cursor: pointer; border-radius: 50%; transition: all 0.3s; }
-    .nav-arrow:hover { background: rgba(255,255,255,0.18); transform: translateY(-50%) scale(1.05); }
-    a:focus, button:focus, .action-btn:focus { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
-    .calc-card { max-width: 440px; width: 100%; background: #1a1a1a; padding: 25px; border: 1px solid #2a2a2a; border-top: 4px solid #e31e24; border-radius: 8px; box-shadow: 0 15px 35px rgba(0,0,0,0.6); margin: 40px auto 0; }
-    .calc-card h2 { color: #e31e24; font-size: 18px; text-align: center; margin: 0 0 20px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
-    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
-    .calc-span-2 { grid-column: span 2; }
-    .calc-field-label { display: block; margin-bottom: 6px; font-size: 11px; color: rgba(227, 30, 36, 0.5); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-    .calc-card input, .calc-card select { width: 100%; padding: 12px; background: #252525; color: #fff; border: 1px solid #333; border-radius: 5px; box-sizing: border-box; font-size: 14px; outline: none; }
-    .calc-card input:focus, .calc-card select:focus { border-color: #e31e24; }
-    .calc-options { margin: 15px 0; border-top: 1px solid #2a2a2a; padding-top: 15px; }
-    .calc-chk-wrap { display: flex; align-items: center; gap: 12px; cursor: pointer; font-size: 12px; color: rgba(227, 30, 36, 0.5); font-weight: 600; text-transform: uppercase; margin-bottom: 10px; }
-    .calc-chk-wrap input { width: 16px; height: 16px; accent-color: #e31e24; cursor: pointer; opacity: 0.7; }
-    .calc-btn { width: 100%; padding: 16px; background: #e31e24; color: #fff; border: none; border-radius: 5px; font-size: 15px; font-weight: 700; cursor: pointer; text-transform: uppercase; margin-top: 10px; transition: 0.3s; }
-    .calc-btn:hover { background: #ff2a31; }
-    .calc-res-box { margin-top: 20px; padding: 15px; background: rgba(227, 30, 36, 0.04); border: 1px dashed rgba(227, 30, 36, 0.4); border-radius: 6px; text-align: center; display: none; }
-    .calc-res-pre { font-size: 11px; color: #888; text-transform: uppercase; display: block; margin-bottom: 2px; }
-    .calc-price { font-size: 24px; color: #fff; font-weight: 600; display: block; margin-bottom: 5px; }
-    .calc-res-after { font-size: 13px; color: #e31e24; font-weight: 600; text-transform: uppercase; display: block; letter-spacing: 0.5px; }
-    .calc-hidden { display: none !important; }
+    a:focus, button:focus { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
     @media (max-width: 900px) {
       .card { flex-direction: column; align-items: center; }
       .card-image-wrapper { width: 100%; max-width: 100%; height: 280px; padding: 10px; }
       .card-content { width: 100%; padding: 18px; text-align: left; align-items:flex-start; }
       .section-text { margin: 20px auto; }
-      .sub-grid { grid-template-columns: 1fr; gap: 20px; }
-      .bottom-actions { grid-template-columns: 1fr; gap: 12px; }
-      .back-btn { left: 20px; bottom: 20px; }
-    }
-    @media (max-width: 480px) {
-      .calc-grid { grid-template-columns: 1fr; }
-      .calc-span-2 { grid-column: auto; }
     }
     @media (max-width: 600px) {
       .container { padding: 0 8px !important; }
-      .calc-card { margin: 35px auto 0 !important; max-width: 100% !important; width: calc(100% - 16px) !important; padding: 22px 16px !important; box-sizing: border-box !important; }
-      .calc-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
-      .calc-span-2 { grid-column: 1 !important; }
-      .bottom-actions { grid-template-columns: 1fr !important; gap: 14px !important; margin: 45px 0 20px !important; padding: 0 8px; }
-      .action-btn { padding: 18px 12px !important; font-size: 1.02rem !important; min-height: 58px !important; border-radius: 6px !important; display: flex !important; align-items: center !important; justify-content: center !important; }
-      .action-btn[href*="t.me"] { background: #0088cc !important; border-color: #0077b6 !important; }
-      .card-image-wrapper, .sub-card { background: transparent !important; border: none !important; box-shadow: none !important; padding: 0 !important; }
-      .card-image-wrapper { height: 240px !important; }
-      .sub-card { padding-bottom: 78% !important; }
-      .card img, .sub-card img { border: none !important; border-radius: 4px !important; }
-      #details-page, #gallery-page { padding: 15px 8px !important; }
-      .back-btn { left: 12px !important; bottom: 12px !important; font-size: 0.75rem !important; padding: 11px 20px !important; }
+      .card-content h2 { word-wrap: break-word; overflow-wrap: break-word; hyphens: auto; font-size: 1.4rem !important; }
+      .card-image-wrapper { background: transparent !important; border: none !important; box-shadow: none !important; padding: 0 !important; height: 240px !important; }
+      .card img { border: none !important; border-radius: 4px !important; }
     }
-    #gallery-page .green-badge { display: inline-block; vertical-align: middle; font-size: 0.75rem; padding: 3px 8px; margin-left: 4px; margin-right: 0; line-height: 1.1; background: rgba(46,204,113,0.15); color: var(--promo-green-bright); box-shadow: inset 0 0 0 1px rgba(46,204,113,0.2); border-radius: 3px; }
   </style>
 </head>
 <body>
-  <header id="main-header">
+  <header>
     <div class="header-content">
       <h1>ВІКНА ТА ДВЕРІ КРОПИВНИЦЬКИЙ</h1>
       <div class="sub-header-top">МОНТАЖ ПІД КЛЮЧ</div>
       <div class="sub-header-bottom">ВЛАСНЕ ВИРОБНИЦТВО ТА ГАРАНТІЯ</div>
     </div>
   </header>
-  <div class="features-bar" id="main-features">
+  <div class="features-bar">
     <div class="feature-item">Власне виробництво</div>
     <div class="feature-item">Безкоштовний замір</div>
     <div class="feature-item">Монтаж під ключ</div>
@@ -226,174 +163,49 @@
     </div>
   </div>
   <div class="container">
-    <div id="main-page" style="display: block;">
-      <div class="card" id="card-doors" onclick="showDetails('doors')">
-        <div class="card-image-wrapper"><img src="doors.png" alt="Вхідні двері та вікна Кропивницький" width="800" height="600" loading="lazy"></div>
-        <div class="card-content">
-          <h2>ВІКНА ТА ДВЕРІ</h2>
-          <div style="padding: 0;">
-            <span class="red-badge" style="margin-bottom: 10px;">ЗАТИШОК ВАШОЇ ОСЕЛІ</span>
-            <p> Пропонуємо якісні металопластикові вікна від <span class="green-badge" style="margin: 0;">6000 грн</span> та металеві вхідні двері від <span class="green-badge" style="margin: 0;">8000 грн</span>. Оптимальне рішення для тих, хто цінує комфорт, тепло та безпеку у своєму домі. Чіткі строки виконання робіт. </p>
-            <span class="red-badge" style="margin-top: 10px;">Безкоштовний замір та прорахунок</span>
-          </div>
+    <div class="card" onclick="location.href='doors.html'">
+      <div class="card-image-wrapper"><img src="doors.png" alt="Вхідні двері та вікна Кропивницький" width="800" height="600" loading="lazy"></div>
+      <div class="card-content">
+        <h2>ВІКНА ТА ДВЕРІ</h2>
+        <div style="padding: 0;">
+          <span class="red-badge">ЗАТИШОК ВАШОЇ ОСЕЛІ</span>
+          <p>Пропонуємо якісні металопластикові вікна від <span class="green-badge" style="margin: 0;">6000 грн</span> та металеві вхідні двері від <span class="green-badge" style="margin: 0;">10000 грн</span>. Оптимальне рішення для тих, хто цінує комфорт, тепло та безпеку у своєму домі. Чіткі строки виконання робіт.</p>
+          <span class="red-badge">Безкоштовний замір та прорахунок</span> 
         </div>
-      </div>
-      <div class="card" id="card-gates" onclick="showDetails('gates')">
-        <div class="card-image-wrapper"><img src="gates.png" alt="Ворота та паркани Кропивницький під ключ" width="800" height="600" loading="lazy"></div>
-        <div class="card-content">
-          <h2>ВОРОТА ПАРКАНИ НАВІСИ</h2>
-          <div style="padding: 0;">
-            <span class="red-badge" style="margin-bottom: 10px;">Надійність та захист</span>
-            <p>Виготовляємо та встановлюємо сучасні ворота, стильні паркани та надійні навіси для вашого подвір'я. Це комплексне рішення для тих, хто прагне забезпечити приватність, захист та охайний вигляд своєї території.</p>
-            <span class="red-badge" style="margin-top: 10px;">Доставка по місту безкоштовно</span>
-          </div>
-        </div>
-      </div>
-      <div class="card" id="card-structures" onclick="showDetails('structures')">
-        <div class="card-image-wrapper"><img src="structures.png" alt="Металоконструкції Кропивницький" width="800" height="600" loading="lazy"></div>
-        <div class="card-content">
-          <h2>МЕТАЛОКОНСТРУКЦІЇ</h2>
-          <div style="padding: 0;">
-            <span class="red-badge" style="margin-bottom: 10px;">Індивідуальні рішення</span>
-            <p>Якісні рішення: від торгових павільйонів до садових альтанок. Чіткі строки виконання робіт та професійний монтаж металоконструкцій.</p>
-            <span class="red-badge" style="margin-top: 10px;">Консультація та проектування</span>
-          </div>
-        </div>
-      </div>
-      <div class="map-section" id="map-anchor">
-        <div class="map-label">вул. Вербицького, 5, Кропивницький</div>
-        <div class="map-container">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2612.3563914856015!2d32.2533146768393!3d48.46877557128151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d042cf76f3f0e1%3A0x63351f33f6781432!2z0LLRg9C7LiDQktC10YDQsdC40YbRjNC60L7Qs9C-LCA1LCDQmtGA0L7Qv9C40LLQvdC40YbRjNC60LjQuSwg0JrRltGA0L7QstC-0LPRgNCw0LTRgdGM0LrQsCDQvtCx0LvQsNGB0YLRjCwgMjUwMDA!5e0!3m2!1suk!2sua!4v1715424000000!5m2!1suk!2sua" loading="lazy" style="border:0;" allowfullscreen=""></iframe>
-        </div>
-      </div>
-      <div class="section-text">
-        <span class="red-badge">Понад 20 років ми забезпечуємо затишок у ваших оселях</span>
-        <p class="section-text-desc"> Власна майстерня дозволяє нам пропонувати найкращі ціни на вікна, двері та ворота без посередників. Забезпечуємо технічний супровід та сервісну підтримку. </p>
-        <span class="red-badge">Професійне встановлення вікон та дверей у Кропивницькому</span>
       </div>
     </div>
-    <div id="details-page" style="display: none;">
-      <button class="back-btn" onclick="showMain()">← Назад</button>
-      <div id="dynamic-header-block"></div>
-      <div class="sub-grid" id="sub-grid-details"></div>
-      <div class="calc-card">
-        <h2>Орієнтир вартості</h2>
-        <div class="calc-grid">
-          <div class="calc-span-2">
-            <span class="calc-field-label">Тип конструкції:</span>
-            <select id="calc-cat-details" onchange="syncCalcFields('details')">
-              <option value="doors">Вхідні двері</option>
-              <option value="gates">Ворота</option>
-              <option value="fences">Паркани</option>
-              <option value="canopies">Навіси</option>
-              <option value="metal">Металоконструкції</option>
-            </select>
-          </div>
-          <div>
-            <span class="calc-field-label">Ширина (м):</span>
-            <input type="number" id="calc-w-details" value="1.0" step="0.1">
-          </div>
-          <div>
-            <span class="calc-field-label">Висота (м):</span>
-            <input type="number" id="calc-h-details" value="2.0" step="0.1">
-          </div>
-          <div id="calc-doors-ui-details" class="calc-span-2 calc-grid" style="margin:0;">
-            <div>
-              <span class="calc-field-label">Оздоблення:</span>
-              <select id="calc-finish-details">
-                <option value="vinyl">Шкірвініл</option>
-                <option value="mdf">МДФ накладки</option>
-                <option value="paint">Фарбування</option>
-              </select>
-            </div>
-            <div>
-              <span class="calc-field-label">Призначення:</span>
-              <select id="calc-loc-details">
-                <option value="flat">Квартира</option>
-                <option value="street">Вулиця (Будинок)</option>
-              </select>
-            </div>
-          </div>
-          <div id="calc-mats-ui-details" class="calc-span-2 calc-hidden">
-            <span class="calc-field-label">Матеріал:</span>
-            <select id="calc-mat-list-details"></select>
-          </div>
-          <div class="calc-span-2 calc-options">
-            <label class="calc-chk-wrap"><input type="checkbox" id="calc-demo-details"> Демонтаж</label>
-            <label class="calc-chk-wrap calc-hidden" id="calc-beton-ui-details"><input type="checkbox" id="calc-beton-details"> Бетонування</label>
-          </div>
+    <div class="card" onclick="location.href='gates.html'">
+      <div class="card-image-wrapper"><img src="gates.png" alt="Ворота та паркани Кропивницький під ключ" width="800" height="600" loading="lazy"></div>
+      <div class="card-content">
+        <h2>ВОРОТА ПАРКАНИ НАВІСИ</h2>
+        <div style="padding: 0;">
+          <span class="red-badge">Надійність та захист</span>
+          <p>Виготовляємо та встановлюємо сучасні ворота, стильні паркани та надійні навіси для вашого подвір'я. Це комплексне рішення для тих, хто прагне забезпечити приватність, захист та охайний вигляд своєї території.</p>
+          <span class="red-badge">Доставка по місту безкоштовно</span>
         </div>
-        <button class="calc-btn" onclick="doCalc('details')">Розрахувати</button>
-        <div id="calc-res-box-details" class="calc-res-box">
-          <span class="calc-res-pre">Орієнтовна вартість:</span>
-          <span class="calc-price" id="calc-res-val-details">0 грн</span>
-          <span class="calc-res-after">Остаточна ціна після заміру!</span>
-        </div>
-      </div>
-      <div class="bottom-actions">
-        <a href="tel:0994714483" class="action-btn">Подзвонити</a>
-        <a href="https://t.me/Syomking?text=Код:%202026" target="_blank" rel="noopener noreferrer" class="action-btn" style="background:var(--telegram-color);">Telegram</a>
-        <span class="action-btn" id="more-btn" style="cursor:pointer">Портфоліо...</span>
       </div>
     </div>
-    <div id="gallery-page" style="display: none;">
-      <button class="back-btn" onclick="showCurrentDetails()">← Назад</button>
-      <h2 class="section-title">Портфоліо</h2>
-      <div id="sub-grid-gallery" class="sub-grid"></div>
-      <div class="calc-card">
-        <h2>Орієнтир вартості</h2>
-        <div class="calc-grid">
-          <div class="calc-span-2">
-            <span class="calc-field-label">Тип конструкції:</span>
-            <select id="calc-cat-gallery" onchange="syncCalcFields('gallery')">
-              <option value="doors">Вхідні двері</option>
-              <option value="gates">Ворота</option>
-              <option value="fences">Паркани</option>
-              <option value="canopies">Навіси</option>
-              <option value="metal">Металоконструкції</option>
-            </select>
-          </div>
-          <div>
-            <span class="calc-field-label">Ширина (м):</span>
-            <input type="number" id="calc-w-gallery" value="1.0" step="0.1">
-          </div>
-          <div>
-            <span class="calc-field-label">Висота (м):</span>
-            <input type="number" id="calc-h-gallery" value="2.0" step="0.1">
-          </div>
-          <div id="calc-doors-ui-gallery" class="calc-span-2 calc-grid" style="margin:0;">
-            <div>
-              <span class="calc-field-label">Оздоблення:</span>
-              <select id="calc-finish-gallery">
-                <option value="vinyl">Шкірвініл</option>
-                <option value="mdf">МДФ накладки</option>
-                <option value="paint">Фарбування</option>
-              </select>
-            </div>
-            <div>
-              <span class="calc-field-label">Призначення:</span>
-              <select id="calc-loc-gallery">
-                <option value="flat">Квартира</option>
-                <option value="street">Вулиця (Будинок)</option>
-              </select>
-            </div>
-          </div>
-          <div id="calc-mats-ui-gallery" class="calc-span-2 calc-hidden">
-            <span class="calc-field-label">Матеріал:</span>
-            <select id="calc-mat-list-gallery"></select>
-          </div>
-          <div class="calc-span-2 calc-options">
-            <label class="calc-chk-wrap"><input type="checkbox" id="calc-demo-gallery"> Демонтаж</label>
-            <label class="calc-chk-wrap calc-hidden" id="calc-beton-ui-gallery"><input type="checkbox" id="calc-beton-gallery"> Бетонування</label>
-          </div>
-        </div>
-        <button class="calc-btn" onclick="doCalc('gallery')">Розрахувати</button>
-        <div id="calc-res-box-gallery" class="calc-res-box">
-          <span class="calc-res-pre">Орієнтовна вартість:</span>
-          <span class="calc-price" id="calc-res-val-gallery">0 грн</span>
-          <span class="calc-res-after">Остаточна ціна після заміру!</span>
+    <div class="card" onclick="location.href='structures.html'">
+      <div class="card-image-wrapper"><img src="structures.png" alt="Металоконструкції Кропивницький" width="800" height="600" loading="lazy"></div>
+      <div class="card-content">
+        <h2>МЕТАЛОКОНСТРУКЦІЇ</h2>
+        <div style="padding: 0;">
+          <span class="red-badge">Індивідуальні рішення</span>
+          <p>Якісні рішення: від торгових павільйонів до садових альтанок. Чіткі строки виконання робіт та професійний монтаж металоконструкцій.</p>
+          <span class="red-badge">Консультація та проектування</span>
         </div>
       </div>
+    </div>
+    <div class="map-section">
+      <div class="map-label">вул. Вербицького, 5, Кропивницький</div>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2612.3563914856015!2d32.2533146768393!3d48.46877557128151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d042cf76f3f0e1%3A0x63351f33f6781432!2z0LLRg9C7LiDQktC10YDQsdC40YbRjNC60L7Qs9C-LCA1LCDQmtGA0L7Qv9C40LLQvdC40YbRjNC60LjQuSwg0JrRltGA0L7QstC-0LPRgNCw0LTRgdGM0LrQsCDQvtCx0LvQsNGB0YLRjCwgMjUwMDA!5e0!3m2!1suk!2sua!4v1715424000000!5m2!1suk!2sua" loading="lazy" style="border:0;" allowfullscreen=""></iframe>
+      </div>
+    </div>
+    <div class="section-text">
+      <span class="red-badge">Понад 20 років ми забезпечуємо затишок у ваших оселях</span>
+      <p class="section-text-desc">Власна майстерня дозволяє нам пропонувати найкращі ціни на вікна, двері та ворота без посередників. Забезпечуємо технічний супровід та сервісну підтримку.</p>
+      <span class="red-badge">Професійне встановлення вікон та дверей у Кропивницькому</span>
     </div>
   </div>
   <footer>
@@ -404,244 +216,13 @@
     <div class="footer-sub-text">© 2026 viknadveri.online</div>
   </footer>
   <script>
-    let currentCategory = '';
-    let currentImages = [];
-    let currentIndex = 0;
-    const info = {
-      doors: {
-        sub: [
-          { title: "Двері металеві", desc: "Класичний дизайн та надійна теплоізоляція для вашого затишку за доступною ціною." },
-          { title: "Скління фасаду", desc: "Міцні металопластикові конструкції: сучасне скління для захисту вашого будинку." },
-          { title: "Фарбування дверей", desc: "Покриття металу емаллю з молотковим ефектом. Ідеальне для вулиці та під'їзду." },
-          { title: "Захисні решітки", desc: "Захист вашої оселі: сучасний дизайн та надійність фіксації." },
-          { title: "Господарські двері", desc: "Конструкції під будь-які потреби. З надійними засовами для господарських приміщень." },
-          { title: "Вікна індивідуальні", desc: "Монтаж нестандартних конструкцій. Цікаві рішення для ваших віконних форм." }
-        ]
-      },
-      gates: {
-        sub: [
-          { title: "Огородження території", desc: "Будівництво огорож будь-якої складності. Від воріт до поштової скриньки." },
-          { title: "Фермові навіси", desc: "Складні конструкції на металевих фермах для захисту авто та території." },
-          { title: "Розпашні ворота", desc: "Надійна конструкція з профнастилу та каркасу із профільної труби." },
-          { title: "Хвіртки та люки", desc: "Металеві об'єкти спеціального призначення." },
-          { title: "Дизайнерські ворота", desc: "Металеві системи з декоративними елементами та посиленими ребрами жорсткості." },
-          { title: "Секційні огорожі", desc: "Легкі та міцні огорожі для садів, технічних зон для обмеження доступу." }
-        ]
-      },
-      structures: {
-        sub: [
-          { title: "Торговий павільйон", desc: "Мобільні павільйони під ключ. З дверима, вікнами, ролетами, та утепленням." },
-          { title: "Інтер'єрні сходи", desc: "Металеві сходи високої точності. Ідеальна якість та бездоганний зовнішній вигляд." },
-          { title: "Вуличні сходи", desc: "Зручні та надійні вуличні сходи для підйому на другий поверх." },
-          { title: "Тримач для гантелей", desc: "Компактна підставка оригінальної форми. Виготовлена за індивідуальним ескізом." },
-          { title: "Вольєри для тварин", desc: "Міцні огороджені секції. Для безпеки і комфорту ваших улюбленців." },
-          { title: "Металеві каркаси", desc: "Металеві каркаси будь-якої складності для ваших проектів." }
-        ]
-      }
-    };
-    const calcMaterials = {
-      gates: { 'Профнастил': 2300, 'Євродошка': 3800, 'Ковка': 5500 },
-      fences: { 'Профнастил': 1150, 'Євродошка': 2100, 'Сітка': 850 },
-      canopies: { 'Профнастил': 1600, 'Полікарбонат': 2100 },
-      metal: { 'Стандарт': 1350, 'Посилена': 1900 }
-    };
-    function syncCalcFields(page) {
-      const c = document.getElementById('calc-cat-' + page).value;
-      const isD = (c === 'doors');
-      if (isD) {
-        document.getElementById('calc-w-' + page).value = "1.0";
-        document.getElementById('calc-h-' + page).value = "2.0";
-      } else {
-        document.getElementById('calc-w-' + page).value = "3.0";
-        document.getElementById('calc-h-' + page).value = "2.0";
-      }
-      document.getElementById('calc-doors-ui-' + page).classList.toggle('calc-hidden', !isD);
-      document.getElementById('calc-mats-ui-' + page).classList.toggle('calc-hidden', isD);
-      document.getElementById('calc-beton-ui-' + page).classList.toggle('calc-hidden', isD);
-      const mSelect = document.getElementById('calc-mat-list-' + page);
-      mSelect.innerHTML = '';
-      if (calcMaterials[c]) {
-        for (let m in calcMaterials[c]) {
-          let opt = document.createElement('option');
-          opt.value = calcMaterials[c][m]; opt.text = m;
-          mSelect.add(opt);
-        }
-      }
-    }
-    function doCalc(page) {
-      const c = document.getElementById('calc-cat-' + page).value;
-      const w = parseFloat(document.getElementById('calc-w-' + page).value) || 0;
-      const h = parseFloat(document.getElementById('calc-h-' + page).value) || 0;
-      const area = w * h;
-      let total = 0;
-      if (c === 'doors') {
-        total = 14000;
-        if (document.getElementById('calc-finish-' + page).value === 'mdf') total += 2500;
-        if (document.getElementById('calc-finish-' + page).value === 'paint') total += 500;
-        if (document.getElementById('calc-loc-' + page).value === 'street') total *= 1.05;
-        const stdH = 2.1, stdW = 1.1;
-        if (h > stdH) total *= (1 + ((h - stdH) / 0.1 * 0.05));
-        if (w > stdW) total *= (1 + ((w - stdW) / 0.1 * 0.075));
-      } else {
-        let pricePerM2 = parseFloat(document.getElementById('calc-mat-list-' + page).value);
-        total = area * pricePerM2;
-        if (document.getElementById('calc-beton-' + page).checked) total += (w * 500);
-      }
-      if (document.getElementById('calc-demo-' + page).checked) total += 300;
-      const rb = document.getElementById('calc-res-box-' + page);
-      rb.style.display = 'block';
-      document.getElementById('calc-res-val-' + page).innerText = Math.round(total).toLocaleString() + ' грн';
-    }
-    function showDetails(id) {
-      currentCategory = id;
-      const data = info[id];
-      document.getElementById('main-header').style.display = 'none';
-      document.getElementById('main-features').style.display = 'none';
-      document.getElementById('main-page').style.display = 'none';
-      document.getElementById('details-page').style.display = 'block';
-      const sourceCard = document.getElementById('card-' + id).outerHTML;
-      const dynamicContainer = document.getElementById('dynamic-header-block');
-      dynamicContainer.innerHTML = sourceCard;
-      dynamicContainer.firstChild.removeAttribute('onclick');
-      dynamicContainer.firstChild.style.cursor = 'default';
-      const grid = document.getElementById('sub-grid-details');
-      grid.innerHTML = '';
-      data.sub.forEach((s, idx) => {
-        const imgPath = `${id}${idx + 1}.png`;
-        grid.innerHTML += `<div class="sub-item"><div class="sub-card"><img src="${imgPath}" alt="${s.title}" onclick="openSlider(${idx})" loading="lazy" width="400" height="300" onerror="this.src='https://via.placeholder.com/400x300?text=Фото'"></div><div class="sub-title">${s.title}</div><div class="sub-desc">${s.desc}</div></div>`;
-      });
-      currentImages = data.sub.map((s, idx) => `${id}${idx + 1}.png`);
-      syncCalcFields('details');
-      window.scrollTo(0, 0);
-      document.getElementById('more-btn').onclick = () => showGallery(id);
-    }
-    function showGallery(id) {
-      if (!id) id = currentCategory;
-      currentCategory = id;
-      document.getElementById('details-page').style.display = 'none';
-      document.getElementById('gallery-page').style.display = 'block';
-      const portfolioTitles = {
-        'D1': '01 - Вхідні металеві двері з еко-шкірою коричневого кольору. Хромована фурнітура, надійний замок, стильний зовнішній вигляд. Монтаж під ключ в Кропивницькому.',
-        'D2': '02 - Металопластиковий еркер (виносний балкон) білого кольору. Тепле багатокутне засклення з якісним профілем, двома дверима та великими вікнами.',
-        'D3': '03 - Вуличні металеві двері графітового кольору з молотковим покриттям. Міцна конструкція та надійний замок.',
-        'D4': '04 - Захисна решітка на вікно, металева міцна конструкція з елементами ковки.',
-        'D5': '05 - Господарські двері металеві, фарбовані, з надійним засовом та замком.',
-        'D6': '06 - Захисна решітка та арочне вікно, нестандартний профіль та надійна фіксація - Кропивницький 2025.',
-        'D7': '07 - Металеві двері технічного призначення, внутрішнє встановлення.',
-        'D8': '08 - Двері металеві з кожвінілом, встановлені у деревяний будинок.',
-        'D9': '09 - Металеві двері (темний шоколад), встановлення у підїзд.',
-        'D10': '10 - Сині металеві двері з декоративним віконцем у формі серця. Яскравий колір та оригінальний дизайн.',
-        'D11': '11 - Вхідні металеві двері з двома замками, якісне виконання робіт - Кропивницький 2025.',
-        'D12': '12 - Двері металеві вид зі сторони підїзду з двома замками та молотковим покриттям.',
-        'D13': '13 - Двостулкові двері в підїзд з кодовим замком.',
-        'D14': '14 - Вуличні двері з якісним фарбуванням (сірий металік) та індивідуальним підбором фурнітури.',
-        'D15': '15 - ЗАМІНИТИ - Кропивницький 2025.',
-        'D16': '16 - Квартирні двері з металу, з використанням якісних замків.',
-        'D17': '17 - Двостулкові металеві двері в тамбур. Надійний захист, якісне виконання робіт.',
-        'D18': '18 - ЗАМІНИТИ - Кропивницький 2025.',
-        'G1': '01 - Розпашні ворота з забором із профнастилу. Демонтаж та бетонування конструкції.',
-        'G2': '02 - Навіс для автомобіля з металевим каркасом і полікарбонатом. Міцні ферми та акуратне встановлення - Кропивницький 2025.',
-        'G3': '03 - Ворота розпашні з профнастилу, графітового кольору.',
-        'G4': '04 - Паркан з сірого профнастилу зі спеціальним отвором для домашніх тварин.',
-        'G5': '05 - Розпашні ворота з профнастилу. Стильні ручки та горизонтальний монтаж - Кропивницький 2025',
-        'G6': '06 - Огорожа ділянки з хвірткою з використанням 3D сітки.',
-        'G7': '07 - Огородження території забором та хвірткою з використанням євродошки.',
-        'G8': '08 - Розпашні ворота з хвірткою із профнастилу зеленого кольору.',
-        'G9': '09 - Масивні металеві ворота з елементами ковки. Якісне виконання робіт - Кропивницький 2025.',
-        'G10': '10 - Зелений паркан з профнастилу. Високий, міцний, встановлений на схили.',
-        'G11': '11 - Кована хвіртка ручної роботи. Витончений дизайн та надійність конструкції.',
-        'G12': '12 - Ворота розпашні прогрунтовані. Посилена конструкція з піками - Кропивницький 2025.',
-        'S1': '01 - Модульна конструкція з вікнами та дверима. Виконання робіт різного формату та розмірів.',
-        'S2': '02 - Конструкція перил та огородження сходів у сучасному стилі - Кропивницький 2025.',
-        'S3': '03 - Маршові поворотні сходи на другий поверх з проміжною площадкою.',
-        'S4': '04 - Міцна конструкція для домашнього спортзалу. Встановлена в кімнаті з фіксацією до підлоги - Кропивницький 2025.',
-        'S5': '05 - Вольєр для собак з профнастилу та сітки. Надійний та комфортний для тварини.',
-        'S6': '06 - Каркас для елементу сучасного дизайну біля вікна - Кропивницький 2025.',
-        'S7': '07 - Конструкція перил та огородження сходів у сучасному стилі (вид знизу) - Кропивницький 2025.',
-        'S8': '08 - Конструкція перил та огородження сходів у сучасному стилі (сходи).',
-        'S9': '09 - Конструкція перил та огородження сходів у сучасному стилі (вид збоку).',
-        'S10': '10 - Стелаж складський. З посиленими полицями та мобільною основою.',
-        'S11': '11 - ЗАМІНИТИ.',
-        'S12': '12 - Навіс з профнастилу для захисту подвіря в приватному секторі - Кропивницький 2025.'
-      };
-      const portfolioPrices = {
-        'D1': '14000 грн.', 'D2': '7000 грн/м<sup>2</sup>', 'D3': '14500 грн', 'D4': '1600 грн/м<sup>2</sup>', 'D5': '12500 грн', 'D6': '2300 грн/м<sup>2</sup>', 'D7': '12500 грн', 'D8': '14000 грн', 'D9': '14500 грн',
-        'D10': '16000 грн', 'D11': '14000 грн', 'D12': '15000 грн', 'D13': '18000 грн', 'D14': '14500 грн', 'D15': '16000 грн', 'D16': '14000 грн', 'D17': '18500 грн', 'D18': '14500 грн',
-        
-'G1': '3300 грн/м. п.', 'G2': '3200 грн/м<sup>2</sup>', 'G3': '35000 грн', 'G4': '2500 грн/м. п.', 'G5': '25000 грн', 'G6': '1500 грн/м<sup>2</sup>', 'G7': '45000 грн', 'G8': '35000 грн/м',
-        'G9': '40000 грн', 'G10': '2000 грн/м. п', 'G11': '4500 грн/м<sup>2</sup>', 'G12': '35000 грн',
-        
-'S1': '6000 грн/м<sup>2</sup>', 'S2': '100000 грн', 'S3': '70000 грн', 'S4': '14000 грн', 'S5': '3000 грн/м<sup>2</sup>', 'S6': '7500 грн', 'S7': '100000 грн', 'S8': '100000 грн',
-        'S9': '100000 грн', 'S10': '7000 грн', 'S11': 'заминить грн', 'S12': '3800 грн/м<sup>2</sup>'
-      };
-      const grid = document.getElementById('sub-grid-gallery');
-      grid.innerHTML = '';
-      let galleryImgs = [];
-      let prefix = '';
-      if (id === 'doors') prefix = 'D';
-      else if (id === 'gates') prefix = 'G';
-      else if (id === 'structures') prefix = 'S';
-      for (let i = 1; i <= 36; i++) {
-        const key = prefix + i;
-        const imgPath = `${id}${i}.png`;
-        galleryImgs.push(imgPath);
-        const title = portfolioTitles[key] || `Об'єкт ${i}`;
-        const price = portfolioPrices[key] || '';
-        grid.innerHTML += `<div class="sub-item"><div class="sub-card"><img src="${imgPath}" alt="${title}" onclick="openSlider(${i-1})" onerror="this.style.display='none';this.parentElement.parentElement.style.display='none'"></div><div class="sub-title">${title}${price ? ` від <span class="green-badge">${price}</span>` : ' <span class="sub-desc">Ціна за домовленістю</span>'}</div></div>`;
-      }
-      currentImages = galleryImgs;
-      syncCalcFields('gallery');
-      window.scrollTo(0, 0);
-    }
-    function openSlider(index) {
-      currentIndex = index;
-      if (!currentImages[currentIndex]) return;
-      document.getElementById('modal').style.display = 'flex';
-      document.getElementById('modal-img').src = currentImages[currentIndex];
-    }
-    function changeSlide(dir) {
-      currentIndex = (currentIndex + dir + currentImages.length) % currentImages.length;
-      document.getElementById('modal-img').src = currentImages[currentIndex];
-    }
-    function closeModal() {
-      document.getElementById('modal').style.display = 'none';
-    }
-    function showMain() {
-      document.getElementById('main-header').style.display = 'flex';
-      document.getElementById('main-features').style.display = 'flex';
-      document.getElementById('main-page').style.display = 'block';
-      document.getElementById('details-page').style.display = 'none';
-      window.scrollTo(0, 0);
-    }
-    function showCurrentDetails() {
-      showDetails(currentCategory);
-      document.getElementById('gallery-page').style.display = 'none';
-    }
-    window.onclick = function(event) {
-      if (event.target == document.getElementById('modal')) closeModal();
-    }
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('a[href*="t.me"], a[href^="tel:"]').forEach(link => {
         link.addEventListener('click', function() {
           try { gtag('event', 'click_contact', { 'event_category': 'engagement', 'event_label': this.href }); } catch(e) {}
         });
       });
-      document.querySelectorAll('.card[id^="card-"]').forEach(card => {
-        card.addEventListener('click', function(e) {
-          if (e.target.closest('a')) return;
-          const id = this.id.replace('card-', '');
-          if (typeof showDetails === 'function') showDetails(id);
-        });
-      });
     });
   </script>
-  <div id="modal">
-    <div class="modal-container">
-      <span class="close-modal" onclick="closeModal()" style="position:absolute; top:-50px; right:0; cursor:pointer;">×</span>
-      <button class="nav-arrow" style="left: 10px;" onclick="changeSlide(-1)">❮</button>
-      <img id="modal-img" src="" alt="Фото">
-      <button class="nav-arrow" style="right: 10px;" onclick="changeSlide(1)">❯</button>
-    </div>
-  </div>
 </body>
 </html>
