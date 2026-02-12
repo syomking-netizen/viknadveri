@@ -1,3 +1,22 @@
 User-agent: *
 Allow: /
 Sitemap: https://viknadveri.online/sitemap.xml
+
+# Дозволяємо індексацію всіх головних сторінок
+Allow: /index.html
+Allow: /doors.html
+Allow: /gates.html
+Allow: /structures.html
+Allow: /doors-portfolio.html
+Allow: /gates-portfolio.html
+Allow: /structures-portfolio.html
+
+# Дозволяємо зображення
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.webp
+
+# Дозволяємо CSS та JS
+Allow: /*.css
+Allow: /*.js
