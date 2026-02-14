@@ -72,22 +72,22 @@
     .card-content { width: 60%; padding: 32px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
     .card-content h2 { font-family: 'Montserrat', sans-serif; color: var(--primary); margin: 12px 0; font-size: 1.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.85; }
     .card-content p { font-size: 0.8rem; line-height: 1.8; margin: 0 0 10px 0; }
-    .red-badge { display: inline-block; padding: 4px 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; border-radius: 3px; font-size: 0.72rem; background: rgba(227, 30, 36, 0.12); color: var(--primary); opacity: 0.85; box-shadow: inset 0 0 0 1px rgba(227, 30, 36, 0.15); margin-bottom: 15px; }
+    .red-badge { display: inline-block; padding: 4px 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; border-radius: 3px; font-size: 0.72rem; background: rgba(227, 30, 36, 0.12); color: var(--primary); opacity: 0.85; box-shadow: inset 0 0 0 1px rgba(227, 30, 36, 0.15); margin: 6px 0px 12px; }
     .green-badge { display: inline-block; padding: 4px 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; border-radius: 3px; font-size: 0.72rem; background: rgba(46,204,113,0.15); color: var(--promo-green-bright); box-shadow: inset 0 0 0 1px rgba(46,204,113,0.2); line-height: 1.1; vertical-align: middle; }
     .sub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
-    .sub-item { display: flex; flex-direction: column; gap: 14px; }
+    .sub-item { display: flex; flex-direction: column; gap: 0; }
+    .sub-title { font-size: 0.85rem; font-weight: 800; color: var(--text-main); line-height: 1.2; text-align: center; margin-top: 12px; margin-bottom: 6px; }
     .sub-card { background: var(--image-block-bg); height: 0; padding-bottom: 60%; position: relative; cursor: pointer; overflow: hidden; border: 1px solid var(--border-color); border-radius: 2px; transition: all 0.3s; }
     .sub-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
     .sub-card img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.95) contrast(1.05); }
-    .sub-title { font-size: 0.85rem; font-weight: 600; color: var(--text-main); line-height: 1.2; text-align: center; margin: 0 0 14px 0; }
     .sub-desc { font-size: 0.75rem; line-height: 1.6; color: rgba(160,160,160,0.8); text-align: center; }
     .bottom-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px; }
     .action-btn { display: flex; align-items: center; justify-content: center; background: #252525; color: #fff; text-decoration: none; padding: 15px 8px; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; border: 1px solid var(--border-color); border-radius: 3px; transition: all 0.3s; }
     .action-btn:hover { background: #2d2d2d; transform: translateY(-2px); }
-    footer { width: 100%; background: #080808; padding: 42px 0; border-top: 1px solid var(--border-color); text-align: center; margin-top: 60px; }
-    footer a { color: inherit; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-block; margin: 10px 0; transition: color 0.3s ease; }
+    footer { width: 100%; background: #080808; padding: 28px 0 20px 0; border-top: 1px solid var(--border-color); text-align: center; margin-top: 0; }
+    footer a { color: inherit; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-block; margin: 8px 0; transition: color 0.3s ease; }
     footer a:hover { color: var(--primary); }
-    .footer-sub-text { font-size: 0.8rem; color: #505050; margin-bottom: 6px; }
+    .footer-sub-text { font-size: 0.8rem; color: #505050; margin-bottom: 4px; line-height: 1.4; }
     .calc-card { max-width: 440px; width: 100%; background: #1a1a1a; padding: 25px; border: 1px solid #2a2a2a; border-top: 4px solid #e31e24; border-radius: 8px; box-shadow: 0 15px 35px rgba(0,0,0,0.6); margin: 40px auto 0; }
     .calc-card h2 { color: #e31e24; font-size: 18px; text-align: center; margin: 0 0 20px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
     .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
@@ -236,8 +236,14 @@
     <div class="bottom-actions">
       <a href="tel:0994714483" class="action-btn">Подзвонити</a>
       <a href="https://t.me/Syomking?text=Код:%202026" target="_blank" class="action-btn" style="background:var(--telegram-color);">Telegram</a>
-      <a href="structures-portfolio.html" class="action-btn" style="background:rgba(46,204,113,0.36); border-color:rgba(46,204,113,0.24);">Портфоліо</a>
+      <a href="structures-portfolio.html" class="action-btn" style="background:rgba(46,204,113,0.36); border-color:rgba(46,204,113,0.24);">Каталог продукції</a>
     </div>
+  </div>
+
+  <div style="width: 100%; background: #000; padding: 8px 0; text-align: center; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <a href="index.html" style="margin: 0 12px; font-size: 0.7rem; color: #606060; text-decoration: none;">Головна</a>
+    <a href="doors.html" style="margin: 0 12px; font-size: 0.7rem; color: #606060; text-decoration: none;">Вікна та Двері</a>
+    <a href="gates.html" style="margin: 0 12px; font-size: 0.7rem; color: #606060; text-decoration: none;">Ворота та Паркани</a>
   </div>
 
   <footer>
@@ -245,14 +251,8 @@
     <div class="footer-sub-text">ФОП Сьомкін П. В. — Власне виробництво</div>
     <a href="tel:0994714483">099 471 44 83</a>
     <div class="footer-sub-text">вул. Вербицького, 5, Кропивницький</div>
-    <div class="footer-sub-text" style="margin-top: 15px;">© 2026 viknadveri.online</div>
+    <div class="footer-sub-text" style="margin-top: 10px;">© 2026 viknadveri.online</div>
   </footer>
-  
-  <div style="width: 100%; background: #000; padding: 8px 0; text-align: center; border-top: 1px solid var(--border-color);">
-    <a href="index.html" style="margin: 0 12px; font-size: 0.7rem; color: #606060; text-decoration: none;">Головна</a>
-    <a href="doors.html" style="margin: 0 12px; font-size: 0.7rem; color: #606060; text-decoration: none;">Вікна та Двері</a>
-    <a href="gates.html" style="margin: 0 12px; font-size: 0.7rem; color: #606060; text-decoration: none;">Ворота та Паркани</a>
-  </div>
 
   <script>
     const calcMaterials = {
