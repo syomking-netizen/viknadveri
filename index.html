@@ -67,12 +67,27 @@
     }
     html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
     body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 0; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.65; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; width: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    header { width: 100%; position: relative; height: 380px; overflow: hidden; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.65)), url('bg-header.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-shadow: inset 0 -1px 0 rgba(255,255,255,0.05); padding: 20px; box-sizing: border-box; }
+    header { width: 100%; position: relative; height: 380px; overflow: hidden; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%), url('bg-header-abstract.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-shadow: inset 0 -1px 0 rgba(255,255,255,0.05); padding: 20px; box-sizing: border-box; }
     .header-content { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%; max-width: 1100px; padding: 0 20px; box-sizing: border-box; }
     header h1 { font-family: 'Montserrat', sans-serif; margin: 10px 0 5px 0; font-size: clamp(1.2rem, 5vw, 2.6rem); font-weight: 900; text-transform: uppercase; color: #ffffff; line-height: 1.1; letter-spacing: 0.5px; text-shadow: 0 2px 12px rgba(0,0,0,0.6), 0 4px 24px rgba(0,0,0,0.4); }
     .sub-header-top { font-family: 'Montserrat', sans-serif; font-size: clamp(0.6rem, 2.5vw, 1.3rem); color: #ffffff; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; opacity: 0.92; letter-spacing: 1.2px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
     .sub-header-bottom { margin: 0; font-weight: 600; color: #fff; letter-spacing: 1.8px; font-size: clamp(0.7rem, 2.2vw, 1rem); text-transform: uppercase; opacity: 0.85; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
     .features-bar { width: 100%; background: linear-gradient(180deg, #161616 0%, #1a1a1a 100%); padding: 22px 0; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; border-bottom: 1px solid var(--border-color); align-items: center; box-sizing: border-box; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+    .dropdown { position: relative; display: inline-block; }
+    .dropdown-content { display: none; position: absolute; background-color: #1a1a1a; min-width: 200px; box-shadow: 0 8px 16px rgba(0,0,0,0.6); z-index: 1000; border: 1px solid var(--border-color); border-radius: 4px; margin-top: 5px; }
+    .dropdown-content a { color: #808080; padding: 10px 16px; text-decoration: none; display: block; font-size: 0.72rem; transition: all 0.3s; border-bottom: 1px solid #2a2a2a; }
+    .dropdown-content a:last-child { border-bottom: none; }
+    .dropdown-content a:hover { background-color: #252525; color: #e31e24; }
+    .dropdown:hover .dropdown-content { display: block; }
+    @media (max-width: 768px) {
+      .features-bar { padding: 12px 0; gap: 16px; }
+      .feature-item { font-size: 0.7rem; padding: 6px 12px; }
+      .promo-container { gap: 12px; }
+      .promo-label { padding: 4px 8px; }
+      .p-small { font-size: 0.5rem; }
+      .p-big { font-size: 1.1rem; }
+      .p-accent { font-size: 0.8rem; }
+    }
     .feature-item { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.9rem; color: var(--text-main); text-decoration: none; white-space: nowrap; position: relative; transition: color 0.25s ease; }
     .feature-item::before { content: '•'; color: var(--primary); font-size: 1.3em; filter: drop-shadow(0 0 4px rgba(227, 30, 36, 0.4)); }
     .feature-active { cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); color: rgba(230,230,230,1) !important; position: relative; }
@@ -94,6 +109,10 @@
         --promo-green-bright: rgb(35, 165, 90);
         --promo-green-dark: #229963;
       }
+      header { height: 240px; background-position: center center; background-size: cover; padding: 15px; }
+      header h1 { font-size: clamp(1rem, 4.5vw, 1.8rem); }
+      .sub-header-top { font-size: clamp(0.55rem, 2vw, 0.9rem); margin-bottom: 6px; }
+      .sub-header-bottom { font-size: clamp(0.6rem, 2vw, 0.85rem); }
       .feature-item::before { filter: drop-shadow(0 0 2px rgba(227, 30, 36, 0.25)); }
       .promo-label { filter: drop-shadow(0 2px 4px rgba(46, 204, 113, 0.25)); }
       .card-content h2 { opacity: 0.75; }
@@ -109,7 +128,7 @@
     .card-content { width: 60%; padding: 32px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; box-sizing: border-box; text-align: left; }
     .card-content h2 { font-family: 'Montserrat', sans-serif; color: var(--primary); margin: 12px 0 12px 0; font-size: 1.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.15; opacity: 0.85; }
     .card-content p { font-size: 0.8rem !important; line-height: 1.8 !important; color: var(--text-main) !important; margin: 0 0 10px 0; }
-    .red-badge, .green-badge { display: inline-block; padding: 4px 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; border-radius: 3px; font-size: 0.72rem; line-height: 1.1; vertical-align: middle; margin: 6px 0px 12px; transition: all 0.3s ease; }
+    .red-badge, .green-badge { display: inline-block; padding: 4px 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; border-radius: 3px; font-size: 0.72rem; line-height: 1.1; vertical-align: middle; margin-left: -10px; transition: all 0.3s ease; }
     .red-badge { background: rgba(227, 30, 36, 0.12); color: var(--primary); opacity: 0.85; box-shadow: inset 0 0 0 1px rgba(227, 30, 36, 0.15); margin-bottom: 15px; display: inline-block; }
     .green-badge { background: rgba(46,204,113,0.15); color: var(--promo-green-bright); box-shadow: inset 0 0 0 1px rgba(46,204,113,0.2); }
     .map-section { width: 100%; margin: 12px 0 0 0; padding: 0; text-align: center; position: relative; }
@@ -117,7 +136,7 @@
     .map-container { width: 100%; height: 280px; border: 1px solid var(--border-color); background: #000; overflow: hidden; box-shadow: var(--shadow-sm); border-radius: 2px; }
     .map-container iframe { width: 100%; height: 100%; border: none; filter: grayscale(1) invert(0.92) contrast(1.2); }
     .section-text { margin: 30px auto 40px auto; text-align: center; max-width: 800px; padding: 0 20px; }
-    .section-text-desc { font-size: 0.8rem !important; line-height: 1.8 !important; color: var(--text-main) !important; margin: 0 0 12px 0; }
+    .section-text-desc { font-size: 0.8rem !important; line-height: 1.8 !important; color: var(--text-main) !important; margin: 0 0 15px 0; }
     footer { width: 100%; background: #080808; padding: 28px 0 20px 0; border-top: 1px solid var(--border-color); text-align: center; box-sizing: border-box; box-shadow: 0 -4px 12px rgba(0,0,0,0.3); }
     footer a { color: inherit; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-block; margin: 8px 0; transition: color 0.3s ease; }
     footer a:hover { color: var(--primary); }
@@ -162,6 +181,23 @@
       </div>
     </div>
   </div>
+  
+  <div style="width: 100%; background: #000; padding: 10px 0; text-align: center; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <a href="doors.html" style="margin: 0 10px; font-size: 0.75rem; color: #808080; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#e31e24'" onmouseout="this.style.color='#808080'">Вікна та Двері</a>
+    <a href="gates.html" style="margin: 0 10px; font-size: 0.75rem; color: #808080; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#e31e24'" onmouseout="this.style.color='#808080'">Ворота та Паркани</a>
+    <a href="structures.html" style="margin: 0 10px; font-size: 0.75rem; color: #808080; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#e31e24'" onmouseout="this.style.color='#808080'">Металоконструкції</a>
+    <div class="dropdown" style="display: inline-block; margin: 0 10px;">
+      <a href="doors-portfolio.html" style="font-size: 0.75rem; color: #808080; text-decoration: none; cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='#e31e24'" onmouseout="this.style.color='#808080'">Каталог продукції ▾</a>
+      <div class="dropdown-content">
+        <a href="doors-portfolio.html">Вікна та Двері</a>
+        <a href="gates-portfolio.html">Ворота Паркани Навіси</a>
+        <a href="structures-portfolio.html">Металоконструкції</a>
+      </div>
+    </div>
+    <a href="doors.html#calculator" style="margin: 0 10px; font-size: 0.75rem; color: #808080; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#e31e24'" onmouseout="this.style.color='#808080'">Орієнтир вартості</a>
+    <a href="https://www.facebook.com/vmetalikr/" target="_blank" rel="noopener noreferrer" style="margin: 0 10px; font-size: 0.75rem; color: #808080; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#e31e24'" onmouseout="this.style.color='#808080'">Facebook</a>
+  </div>
+  
   <div class="container">
     <div class="card" onclick="location.href='doors.html'">
       <div class="card-image-wrapper"><img src="doors.png" alt="Вхідні двері та вікна Кропивницький" width="800" height="600" loading="lazy"></div>
@@ -210,9 +246,19 @@
   </div>
   
   <div style="width: 100%; background: #000; padding: 8px 0; text-align: center; border-top: 1px solid #2a2a2a; border-bottom: 1px solid #2a2a2a;">
-    <a href="doors.html" style="margin: 0 12px; font-size: 0.7rem; color: #606060; text-decoration: none;">Вікна та Двері</a>
-    <a href="gates.html" style="margin: 0 12px; font-size: 0.7rem; color: #606060; text-decoration: none;">Ворота та Паркани</a>
-    <a href="structures.html" style="margin: 0 12px; font-size: 0.7rem; color: #606060; text-decoration: none;">Металоконструкції</a>
+    <a href="doors.html" style="margin: 0 8px; font-size: 0.7rem; color: #606060; text-decoration: none;">Вікна та Двері</a>
+    <a href="gates.html" style="margin: 0 8px; font-size: 0.7rem; color: #606060; text-decoration: none;">Ворота та Паркани</a>
+    <a href="structures.html" style="margin: 0 8px; font-size: 0.7rem; color: #606060; text-decoration: none;">Металоконструкції</a>
+    <div class="dropdown" style="display: inline-block; margin: 0 8px;">
+      <a href="doors-portfolio.html" style="font-size: 0.7rem; color: #606060; text-decoration: none; cursor: pointer;">Каталог продукції ▾</a>
+      <div class="dropdown-content">
+        <a href="doors-portfolio.html">Вікна та Двері</a>
+        <a href="gates-portfolio.html">Ворота Паркани Навіси</a>
+        <a href="structures-portfolio.html">Металоконструкції</a>
+      </div>
+    </div>
+    <a href="doors.html#calculator" style="margin: 0 8px; font-size: 0.7rem; color: #606060; text-decoration: none;">Орієнтир вартості</a>
+    <a href="https://www.facebook.com/vmetalikr/" target="_blank" rel="noopener noreferrer" style="margin: 0 8px; font-size: 0.7rem; color: #606060; text-decoration: none;">Facebook</a>
   </div>
   
   <footer>
