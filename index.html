@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="uk">
 <head>
@@ -67,7 +68,10 @@
     }
     html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
     body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 0; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.65; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; width: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    header { width: 100%; position: relative; height: 380px; overflow: hidden; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%), url('bg-header-abstract.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-shadow: inset 0 -1px 0 rgba(255,255,255,0.05); padding: 20px; box-sizing: border-box; }
+    .logo-link { position: fixed; top: 20px; left: 20px; z-index: 1000; width: 48px; height: 48px; background: rgba(26, 26, 26, 0.95); border: 1px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s; box-shadow: var(--shadow-md); }
+    .logo-link:hover { transform: scale(1.05); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+    .logo-link img { width: 28px; height: 28px; }
+    header { width: 100%; position: relative; height: 266px; overflow: hidden; background: url('bg-header.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-shadow: inset 0 -1px 0 rgba(255,255,255,0.05); padding: 20px; box-sizing: border-box; }
     .header-content { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%; max-width: 1100px; padding: 0 20px; box-sizing: border-box; }
     header h1 { font-family: 'Montserrat', sans-serif; margin: 10px 0 5px 0; font-size: clamp(1.2rem, 5vw, 2.6rem); font-weight: 900; text-transform: uppercase; color: #ffffff; line-height: 1.1; letter-spacing: 0.5px; text-shadow: 0 2px 12px rgba(0,0,0,0.6), 0 4px 24px rgba(0,0,0,0.4); }
     .sub-header-top { font-family: 'Montserrat', sans-serif; font-size: clamp(0.6rem, 2.5vw, 1.3rem); color: #ffffff; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; opacity: 0.92; letter-spacing: 1.2px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
@@ -109,7 +113,7 @@
         --promo-green-bright: rgb(35, 165, 90);
         --promo-green-dark: #229963;
       }
-      header { height: 240px; background-position: center center; background-size: cover; padding: 15px; }
+      header { height: 168px; background-position: center center; background-size: cover; padding: 15px; }
       header h1 { font-size: clamp(1rem, 4.5vw, 1.8rem); }
       .sub-header-top { font-size: clamp(0.55rem, 2vw, 0.9rem); margin-bottom: 6px; }
       .sub-header-bottom { font-size: clamp(0.6rem, 2vw, 0.85rem); }
@@ -157,6 +161,10 @@
   </style>
 </head>
 <body>
+  <a href="index.html" class="logo-link" title="На головну">
+    <img src="favicon.png" alt="Вікна Двері Кропивницький">
+  </a>
+  
   <header>
     <div class="header-content">
       <h1>ВІКНА ТА ДВЕРІ КРОПИВНИЦЬКИЙ</h1>
