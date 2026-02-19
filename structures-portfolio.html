@@ -65,7 +65,7 @@
     .sub-card { background: var(--image-block-bg); height: 0; padding-bottom: 60%; position: relative; cursor: pointer; overflow: hidden; border: 1px solid var(--border-color); border-radius: 2px; transition: all 0.3s; margin-bottom: 0; }
     .sub-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
     .sub-card img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.95) contrast(1.05); }
-    .sub-title { font-size: 0.8rem; font-weight: 400; color: var(--text-main); line-height: 1.4; text-align: center; margin: 0; padding: 0; }
+    .sub-title { font-size: 0.75rem; font-weight: 400; color: var(--text-main); line-height: 1.4; text-align: center; margin: 0; padding: 0; }
     .price-line { text-align: right; margin: 0; padding: 0; font-size: 0.8rem; color: var(--text-main); line-height: 1.2; }
     .green-badge { display: inline-block; padding: 3px 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; border-radius: 3px; font-size: 0.75rem; background: rgba(46,204,113,0.15); color: var(--promo-green-bright); box-shadow: inset 0 0 0 1px rgba(46,204,113,0.2); line-height: 1.1; }
     .sub-desc { font-size: 0.8rem; line-height: 1.6; color: var(--text-main); text-align: center; margin: 0; }
@@ -193,12 +193,30 @@
     <div class="modal-container">
       <span class="close-modal">×</span>
       <button class="nav-arrow" style="left: 10px;" onclick="event.stopPropagation(); changeSlide(-1)">❮</button>
-      <img id="modal-img" src="" alt="Фото">
+      <div style="display: flex; flex-direction: column; align-items: center; max-width: 90%; max-height: 90%;">
+        <img id="modal-img" src="" alt="Фото" style="max-width: 100%; max-height: 70vh; object-fit: contain; margin-bottom: 15px;">
+        <div id="modal-text" style="background: rgba(20,19,16,0.95); padding: 15px 25px; border-radius: 8px; max-width: 800px; text-align: center; color: #c5c2bb; font-size: 0.95rem; line-height: 1.6; border: 1px solid #252320;" onclick="event.stopPropagation();"></div>
+      </div>
       <button class="nav-arrow" style="right: 10px;" onclick="event.stopPropagation(); changeSlide(1)">❯</button>
     </div>
   </div>
 
   <script>
+    const descriptions = [
+  `01 - Модульна конструкція з вікнами та дверима. Виконання робіт різного формату та розмірів. від <span class=\"green-badge\">6000 грн/м<sup>2</sup></span>`,
+  `02 - Конструкція перил та огородження сходів у сучасному стилі - Кропивницький 2025.`,
+  `03 - Маршові поворотні сходи на другий поверх з проміжною площадкою.`,
+  `04 - Міцна конструкція для домашнього спортзалу. Встановлена в кімнаті з фіксацією до підлоги - Кропивницький 2025.`,
+  `05 - Вольєр для собак з профнастилу та сітки. Надійний та комфортний для тварини. від <span class=\"green-badge\">3000 грн/м<sup>2</sup></span>`,
+  `06 - Каркас для елементу сучасного дизайну біля вікна - Кропивницький 2025.`,
+  `07 - Конструкція перил та огородження сходів у сучасному стилі (вид знизу) - Кропивницький 2025.`,
+  `08 - Конструкція перил та огородження сходів у сучасному стилі (сходи).`,
+  `09 - Конструкція перил та огородження сходів у сучасному стилі (вид збоку).`,
+  `10 - Стелаж складський. З посиленими полицями та мобільною основою.`,
+  `11 - Металева конструкція спеціального призначення - Кропивницький 2025. <span class=\"sub-desc\">Ціна за домовленістю</span>`,
+  `12 - Навіс з профнастилу для захисту подвіря в приватному секторі - Кропивницький 2025. від <span class=\"green-badge\">3800 грн/м<sup>2</sup></span>`,
+];
+
     const images = Array.from({length: 12}, (_, i) => `structures${i+1}.png`);
     let currentIndex = 0;
     
@@ -206,6 +224,7 @@
       currentIndex = index;
       document.getElementById('modal').style.display = 'flex';
       document.getElementById('modal-img').src = images[currentIndex];
+      document.getElementById('modal-text').innerHTML = descriptions[currentIndex];
     }
     
     function closeModal() {
@@ -215,6 +234,7 @@
     function changeSlide(direction) {
       currentIndex = (currentIndex + direction + images.length) % images.length;
       document.getElementById('modal-img').src = images[currentIndex];
+      document.getElementById('modal-text').innerHTML = descriptions[currentIndex];
     }
   </script>
 </body>
