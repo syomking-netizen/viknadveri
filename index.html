@@ -55,12 +55,12 @@
       --primary-hover: #c41a1f;
       --promo-green-bright: rgb(46, 204, 113);
       --promo-green-dark: #2bbf7c;
-      --bg-dark: #0f0f0f;
-      --card-bg: #1a1a1a;
-      --image-block-bg: #222222;
-      --text-main: rgba(190,190,190,0.85);
+      --bg-dark: #0a0908;
+      --card-bg: #141310;
+      --image-block-bg: #1a1814;
+      --text-main: rgba(180,177,172,0.85);
       --telegram-color: #0088cc;
-      --border-color: #2a2a2a;
+      --border-color: #252320;
       --shadow-sm: 0 2px 8px rgba(0,0,0,0.4);
       --shadow-md: 0 8px 24px rgba(0,0,0,0.5);
       --shadow-lg: 0 16px 48px rgba(0,0,0,0.6);
@@ -73,13 +73,13 @@
     .logo-link img { width: 28px; height: 28px; }
     header { width: 100%; position: relative; height: 266px; overflow: hidden; background: url('bg-header.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-shadow: inset 0 -1px 0 rgba(255,255,255,0.05); padding: 20px; box-sizing: border-box; }
     .header-content { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%; max-width: 1100px; padding: 0 20px; box-sizing: border-box; }
-    header h1 { font-family: 'Montserrat', sans-serif; margin: 10px 0 5px 0; font-size: clamp(1.2rem, 5vw, 2.6rem); font-weight: 900; text-transform: uppercase; color: #ffffff; line-height: 1.1; letter-spacing: 0.5px; text-shadow: 0 2px 12px rgba(0,0,0,0.6), 0 4px 24px rgba(0,0,0,0.4); }
-    .sub-header-top { font-family: 'Montserrat', sans-serif; font-size: clamp(0.6rem, 2.5vw, 1.3rem); color: #ffffff; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; opacity: 0.92; letter-spacing: 1.2px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
-    .sub-header-bottom { margin: 0; font-weight: 600; color: #fff; letter-spacing: 1.8px; font-size: clamp(0.7rem, 2.2vw, 1rem); text-transform: uppercase; opacity: 0.85; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
-    .features-bar { width: 100%; background: linear-gradient(180deg, #161616 0%, #1a1a1a 100%); padding: 22px 0; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; border-bottom: 1px solid var(--border-color); align-items: center; box-sizing: border-box; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+    header h1 { font-family: 'Montserrat', sans-serif; margin: 10px 0 5px 0; font-size: clamp(1.2rem, 5vw, 2.6rem); font-weight: 900; text-transform: uppercase; color: #e8e6e3; line-height: 1.1; letter-spacing: 0.5px; text-shadow: 0 2px 12px rgba(0,0,0,0.6), 0 4px 24px rgba(0,0,0,0.4); }
+    .sub-header-top { font-family: 'Montserrat', sans-serif; font-size: clamp(0.6rem, 2.5vw, 1.3rem); color: #e8e6e3; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; opacity: 0.92; letter-spacing: 1.2px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+    .sub-header-bottom { margin: 0; font-weight: 600; color: #e8e6e3; letter-spacing: 1.8px; font-size: clamp(0.7rem, 2.2vw, 1rem); text-transform: uppercase; opacity: 0.85; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+    .features-bar { width: 100%; background: linear-gradient(180deg, #100f0c 0%, #141310 100%); padding: 22px 0; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; border-bottom: 1px solid var(--border-color); align-items: center; box-sizing: border-box; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
     .dropdown { position: relative; display: inline-block; }
-    .dropdown-content { display: none; position: absolute; background-color: #1a1a1a; min-width: 200px; box-shadow: 0 8px 16px rgba(0,0,0,0.6); z-index: 1000; border: 1px solid var(--border-color); border-radius: 4px; margin-top: 5px; }
-    .dropdown-content a { color: #808080; padding: 10px 16px; text-decoration: none; display: block; font-size: 0.72rem; transition: all 0.3s; border-bottom: 1px solid #2a2a2a; }
+    .dropdown-content { display: none; position: absolute; background-color: #141310; min-width: 200px; box-shadow: 0 8px 16px rgba(0,0,0,0.6); z-index: 1000; border: 1px solid var(--border-color); border-radius: 4px; margin-top: 5px; }
+    .dropdown-content a { color: #78756f; padding: 10px 16px; text-decoration: none; display: block; font-size: 0.72rem; transition: all 0.3s; border-bottom: 1px solid #252320; }
     .dropdown-content a:last-child { border-bottom: none; }
     .dropdown-content a:hover { background-color: #252525; color: #e31e24; }
     .dropdown:hover .dropdown-content { display: block; }
@@ -96,7 +96,7 @@
     .feature-item::before { content: '•'; color: var(--primary); font-size: 1.3em; filter: drop-shadow(0 0 4px rgba(227, 30, 36, 0.4)); }
     .feature-active { cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); color: rgba(230,230,230,1) !important; position: relative; }
     .feature-active:hover { color: var(--primary) !important; transform: translateY(-1px); }
-    .contact-tip { position: absolute; top: -45px; left: 50%; transform: translateX(-50%); font-size: 1.3rem; color: #ffffff; font-weight: 600; white-space: nowrap; opacity: 0; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); pointer-events: none; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+    .contact-tip { position: absolute; top: -45px; left: 50%; transform: translateX(-50%); font-size: 1.3rem; color: #e8e6e3; font-weight: 600; white-space: nowrap; opacity: 0; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); pointer-events: none; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
     .feature-active:hover .contact-tip { opacity: 1; top: -50px; }
     .promo-container { display: flex; flex-direction: column; align-items: center; position: relative; }
     .promo-links { display: flex; gap: 32px; align-items: center; height: 20px; position: relative; padding: 5px 15px; z-index: 10; }
@@ -124,8 +124,8 @@
       .sub-header-top, .sub-header-bottom { text-shadow: 0 2px 6px rgba(0,0,0,0.4); }
     }
     .container { width: 100%; max-width: 1100px; margin: 32px auto 0 auto; padding: 0 20px; box-sizing: border-box; flex: 1; position: relative; }
-    .card { display: flex; background: linear-gradient(145deg, #1d1d1d, #181818); margin-bottom: 28px; overflow: hidden; border: 1px solid var(--border-color); border-top: 1px solid #2d2d2d; box-shadow: var(--shadow-md); cursor: pointer; transition: all 0.35s cubic-bezier(0.4,0,0.2,1); border-radius: 2px; }
-    .card:hover { transform: translateY(-2px); border-color: #404040; box-shadow: var(--shadow-lg); background: linear-gradient(145deg, #1e1e1e, #1a1a1a); }
+    .card { display: flex; background: linear-gradient(145deg, #181714, #131210); margin-bottom: 28px; overflow: hidden; border: 1px solid var(--border-color); border-top: 1px solid #2d2d2d; box-shadow: var(--shadow-md); cursor: pointer; transition: all 0.35s cubic-bezier(0.4,0,0.2,1); border-radius: 2px; }
+    .card:hover { transform: translateY(-2px); border-color: #404040; box-shadow: var(--shadow-lg); background: linear-gradient(145deg, #1e1e1e, #141310); }
     .card-image-wrapper { width: 40%; max-width: 420px; height: 280px; background: var(--image-block-bg); padding: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-sizing: border-box; transition: background 0.3s ease; }
     .card img { width: 100%; height: 100%; object-fit: cover; background: var(--image-block-bg); border: 1px solid #2d2d2d; pointer-events: none; object-position: center; max-width: 100%; filter: brightness(0.95) contrast(1.05); backface-visibility: hidden; -webkit-backface-visibility: hidden; transform: translateZ(0); -webkit-transform: translateZ(0); }
     .card:hover img { filter: brightness(0.95) contrast(1.05); }
@@ -136,15 +136,15 @@
     .red-badge { background: rgba(227, 30, 36, 0.12); color: var(--primary); opacity: 0.85; box-shadow: inset 0 0 0 1px rgba(227, 30, 36, 0.15); margin-bottom: 15px; display: inline-block; }
     .green-badge { background: rgba(46,204,113,0.15); color: var(--promo-green-bright); box-shadow: inset 0 0 0 1px rgba(46,204,113,0.2); }
     .map-section { width: 100%; margin: 12px 0 0 0; padding: 0; text-align: center; position: relative; }
-    .map-label { position: absolute; top: 16px; left: 16px; background: rgba(15,15,15,0.94); color: #fff; padding: 9px 16px; font-size: 0.75rem; font-weight: 600; border: 1px solid var(--border-color); border-radius: 3px; z-index: 10; backdrop-filter: blur(6px); box-shadow: var(--shadow-sm); }
-    .map-container { width: 100%; height: 280px; border: 1px solid var(--border-color); background: #000; overflow: hidden; box-shadow: var(--shadow-sm); border-radius: 2px; }
+    .map-label { position: absolute; top: 16px; left: 16px; background: rgba(15,15,15,0.94); color: #e8e6e3; padding: 9px 16px; font-size: 0.75rem; font-weight: 600; border: 1px solid var(--border-color); border-radius: 3px; z-index: 10; backdrop-filter: blur(6px); box-shadow: var(--shadow-sm); }
+    .map-container { width: 100%; height: 280px; border: 1px solid var(--border-color); background: #050504; overflow: hidden; box-shadow: var(--shadow-sm); border-radius: 2px; }
     .map-container iframe { width: 100%; height: 100%; border: none; filter: grayscale(1) invert(0.92) contrast(1.2); }
     .section-text { margin: 30px auto 40px auto; text-align: center; max-width: 800px; padding: 0 20px; }
     .section-text-desc { font-size: 0.8rem !important; line-height: 1.8 !important; color: var(--text-main) !important; margin: 0 0 15px 0; }
-    footer { width: 100%; background: #080808; padding: 28px 0 20px 0; border-top: 1px solid var(--border-color); text-align: center; box-sizing: border-box; box-shadow: 0 -4px 12px rgba(0,0,0,0.3); }
+    footer { width: 100%; background: #080705; padding: 28px 0 20px 0; border-top: 1px solid var(--border-color); text-align: center; box-sizing: border-box; box-shadow: 0 -4px 12px rgba(0,0,0,0.3); }
     footer a { color: inherit; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-block; margin: 8px 0; transition: color 0.3s ease; }
     footer a:hover { color: var(--primary); }
-    .footer-sub-text { font-size: 0.8rem; color: #505050; display: block; margin-bottom: 4px; letter-spacing: 0.2px; line-height: 1.4; }
+    .footer-sub-text { font-size: 0.8rem; color: #4a4843; display: block; margin-bottom: 4px; letter-spacing: 0.2px; line-height: 1.4; }
     a:focus, button:focus { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
     @media (max-width: 900px) {
       .card { flex-direction: column; align-items: center; }
@@ -190,20 +190,20 @@
     </div>
   </div>
   
-  <div style="width: 100%; background: #000; padding: 10px 0; text-align: center; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-    <a href="doors.html" style="margin: 0 10px; font-size: 0.75rem; color: #808080; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#e31e24'" onmouseout="this.style.color='#808080'">Вікна та Двері</a>
-    <a href="gates.html" style="margin: 0 10px; font-size: 0.75rem; color: #808080; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#e31e24'" onmouseout="this.style.color='#808080'">Ворота та Паркани</a>
-    <a href="structures.html" style="margin: 0 10px; font-size: 0.75rem; color: #808080; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#e31e24'" onmouseout="this.style.color='#808080'">Металоконструкції</a>
+  <div style="width: 100%; background: #050504; padding: 10px 0; text-align: center; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <a href="doors.html" style="margin: 0 10px; font-size: 0.75rem; color: #78756f; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#e31e24'" onmouseout="this.style.color='#78756f'">Вікна та Двері</a>
+    <a href="gates.html" style="margin: 0 10px; font-size: 0.75rem; color: #78756f; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#e31e24'" onmouseout="this.style.color='#78756f'">Ворота та Паркани</a>
+    <a href="structures.html" style="margin: 0 10px; font-size: 0.75rem; color: #78756f; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#e31e24'" onmouseout="this.style.color='#78756f'">Металоконструкції</a>
     <div class="dropdown" style="display: inline-block; margin: 0 10px;">
-      <a href="doors-portfolio.html" style="font-size: 0.75rem; color: #808080; text-decoration: none; cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='#e31e24'" onmouseout="this.style.color='#808080'">Каталог продукції ▾</a>
+      <a href="doors-portfolio.html" style="font-size: 0.75rem; color: #78756f; text-decoration: none; cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='#e31e24'" onmouseout="this.style.color='#78756f'">Каталог продукції ▾</a>
       <div class="dropdown-content">
         <a href="doors-portfolio.html">Вікна та Двері</a>
         <a href="gates-portfolio.html">Ворота Паркани Навіси</a>
         <a href="structures-portfolio.html">Металоконструкції</a>
       </div>
     </div>
-    <a href="doors.html#calculator" style="margin: 0 10px; font-size: 0.75rem; color: #808080; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#e31e24'" onmouseout="this.style.color='#808080'">Орієнтир вартості</a>
-    <a href="https://www.facebook.com/viknadverionline/" target="_blank" rel="noopener noreferrer" style="margin: 0 10px; font-size: 0.75rem; color: #808080; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#e31e24'" onmouseout="this.style.color='#808080'">Facebook</a>
+    <a href="doors.html#calculator" style="margin: 0 10px; font-size: 0.75rem; color: #78756f; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#e31e24'" onmouseout="this.style.color='#78756f'">Орієнтир вартості</a>
+    <a href="https://www.facebook.com/viknadverionline/" target="_blank" rel="noopener noreferrer" style="margin: 0 10px; font-size: 0.75rem; color: #78756f; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#e31e24'" onmouseout="this.style.color='#78756f'">Facebook</a>
   </div>
   
   <div class="container">
@@ -253,20 +253,20 @@
     </div>
   </div>
   
-  <div style="width: 100%; background: #000; padding: 8px 0; text-align: center; border-top: 1px solid #2a2a2a; border-bottom: 1px solid #2a2a2a;">
-    <a href="doors.html" style="margin: 0 8px; font-size: 0.7rem; color: #606060; text-decoration: none;">Вікна та Двері</a>
-    <a href="gates.html" style="margin: 0 8px; font-size: 0.7rem; color: #606060; text-decoration: none;">Ворота та Паркани</a>
-    <a href="structures.html" style="margin: 0 8px; font-size: 0.7rem; color: #606060; text-decoration: none;">Металоконструкції</a>
+  <div style="width: 100%; background: #050504; padding: 8px 0; text-align: center; border-top: 1px solid #252320; border-bottom: 1px solid #252320;">
+    <a href="doors.html" style="margin: 0 8px; font-size: 0.7rem; color: #5a5853; text-decoration: none;">Вікна та Двері</a>
+    <a href="gates.html" style="margin: 0 8px; font-size: 0.7rem; color: #5a5853; text-decoration: none;">Ворота та Паркани</a>
+    <a href="structures.html" style="margin: 0 8px; font-size: 0.7rem; color: #5a5853; text-decoration: none;">Металоконструкції</a>
     <div class="dropdown" style="display: inline-block; margin: 0 8px;">
-      <a href="doors-portfolio.html" style="font-size: 0.7rem; color: #606060; text-decoration: none; cursor: pointer;">Каталог продукції ▾</a>
+      <a href="doors-portfolio.html" style="font-size: 0.7rem; color: #5a5853; text-decoration: none; cursor: pointer;">Каталог продукції ▾</a>
       <div class="dropdown-content">
         <a href="doors-portfolio.html">Вікна та Двері</a>
         <a href="gates-portfolio.html">Ворота Паркани Навіси</a>
         <a href="structures-portfolio.html">Металоконструкції</a>
       </div>
     </div>
-    <a href="doors.html#calculator" style="margin: 0 8px; font-size: 0.7rem; color: #606060; text-decoration: none;">Орієнтир вартості</a>
-    <a href="https://www.facebook.com/viknadverionline/" target="_blank" rel="noopener noreferrer" style="margin: 0 8px; font-size: 0.7rem; color: #606060; text-decoration: none;">Facebook</a>
+    <a href="doors.html#calculator" style="margin: 0 8px; font-size: 0.7rem; color: #5a5853; text-decoration: none;">Орієнтир вартості</a>
+    <a href="https://www.facebook.com/viknadverionline/" target="_blank" rel="noopener noreferrer" style="margin: 0 8px; font-size: 0.7rem; color: #5a5853; text-decoration: none;">Facebook</a>
   </div>
   
   <footer>
