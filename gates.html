@@ -189,6 +189,548 @@
       </div>
     </div>
 
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Як ми працюємо — viknadveri.online</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .vd-workflow {
+    background: transparent;
+    padding: 38px 20px 38px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    width: 100%;
+  }
+
+  .vd-workflow__divider {
+    max-width: 900px;
+    margin: 0 auto;
+    border: none;
+    border-top: 1px solid #2a2c2f;
+    opacity: 0.7;
+  }
+
+  .vd-workflow__label {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: rgba(154,157,166,0.8);
+    margin: 14px 0 24px;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(10px);
+  }
+
+  /* === DESKTOP: горизонтальний ряд === */
+  .vd-workflow__steps {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .vd-workflow__arrow {
+    display: flex;
+    align-items: center;
+    padding-top: 54px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .vd-workflow__arrow svg {
+    width: 24px;
+    height: 12px;
+    flex-shrink: 0;
+  }
+
+  .vd-step {
+    flex: 1;
+    min-width: 0;
+    background: rgba(19, 26, 20, 0.85);
+    border: 1px solid #1e3a20;
+    border-radius: 6px;
+    padding: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    position: relative;
+  }
+
+  .vd-step__bar {
+    height: 3px;
+    background: #2d8a3e;
+    border-radius: 1px 1px 0 0;
+  }
+
+  .vd-step__inner {
+    padding: 16px 12px 16px;
+    text-align: center;
+  }
+
+  .vd-step__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(22, 24, 27, 0.9);
+    border: 1px solid #2a2c30;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .vd-step__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .vd-step__title {
+    font-size: 13px;
+    font-weight: 500;
+    color: #e8e6e0;
+    margin-bottom: 6px;
+  }
+
+  .vd-step__sub {
+    font-size: 11px;
+    color: rgba(154,157,166,0.8);
+    line-height: 1.5;
+    min-height: 32px;
+  }
+
+  .vd-step__badge {
+    margin-top: 12px;
+    background: #1a2e1c;
+    padding: 5px 8px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #2d8a3e;
+    letter-spacing: 0.5px;
+  }
+
+  /* progress bar */
+  .vd-workflow__progress {
+    max-width: 680px;
+    margin: 20px auto 0;
+    position: relative;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .vd-workflow__progress-track {
+    position: absolute;
+    left: 0; right: 0; top: 50%;
+    height: 2px;
+    background: #1e2022;
+    transform: translateY(-50%);
+  }
+
+  .vd-workflow__progress-fill {
+    position: absolute;
+    left: 0; top: 50%;
+    height: 2px;
+    background: #2d8a3e;
+    opacity: 0.4;
+    transform: translateY(-50%);
+    width: 0;
+    transition: width 1s ease;
+  }
+
+  .vd-workflow__dots {
+    position: absolute;
+    left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 calc(12.5% - 5px);
+  }
+
+  .vd-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #2d8a3e;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  /* tagline */
+  .vd-workflow__tagline {
+    text-align: center;
+    font-size: 11px;
+    color: rgba(154,157,166,0.8);
+    letter-spacing: 0.4px;
+    margin-top: 16px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  /* footer */
+  .vd-workflow__footer {
+    max-width: 680px;
+    margin: 16px auto 0;
+    border-top: 1px solid #1e2022;
+    padding-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .vd-footer-col {
+    text-align: center;
+    flex: 1;
+  }
+
+  .vd-footer-col__label {
+    font-size: 11px;
+    color: rgba(154,157,166,0.8);
+    margin-bottom: 4px;
+  }
+
+  .vd-footer-col__val {
+    font-size: 12px;
+    font-weight: 500;
+    color: #2d8a3e;
+    text-decoration: none;
+    display: block;
+  }
+
+  .vd-footer-col__val:hover { text-decoration: underline; }
+
+  .vd-footer-col__val--gray {
+    color: rgba(154,157,166,0.8);
+  }
+
+  /* === MOBILE: вертикальний стек === */
+  @media (max-width: 600px) {
+    .vd-workflow { padding: 38px 16px 38px; }
+
+    .vd-workflow__steps {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      max-width: 320px;
+    }
+
+    .vd-step {
+      display: flex;
+      flex-direction: row;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .vd-step__bar {
+      width: 3px;
+      height: auto;
+      border-radius: 1px 0 0 1px;
+      flex-shrink: 0;
+    }
+
+    .vd-step__inner {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      text-align: left;
+      padding: 12px 12px;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .vd-step__icon {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      margin: 0;
+    }
+
+    .vd-step__icon svg { width: 20px; height: 20px; }
+
+    .vd-step__content { flex: 1; }
+
+    .vd-step__title { margin-bottom: 2px; font-size: 13px; }
+    .vd-step__sub { font-size: 10px; min-height: auto; }
+
+    .vd-step__badge {
+      margin-top: 4px;
+      display: inline-block;
+      font-size: 9px;
+    }
+
+    .vd-workflow__arrow {
+      padding: 0 0 0 20px;
+      height: 20px;
+      align-items: center;
+    }
+
+    .vd-workflow__arrow svg {
+      width: 12px;
+      height: 20px;
+      transform: rotate(90deg);
+    }
+
+    .vd-workflow__progress { display: none; }
+
+    .vd-workflow__tagline {
+      font-size: 10px;
+      letter-spacing: 0;
+    }
+
+    .vd-workflow__footer {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .vd-footer-col {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 4px;
+    }
+
+    .vd-footer-col__label { margin-bottom: 0; }
+  }
+</style>
+</head>
+<body>
+
+<section class="vd-workflow" id="vd-workflow">
+
+  <hr class="vd-workflow__divider">
+
+  <p class="vd-workflow__label" id="vd-label">ВЗАЄМОДІЯ З КЛІЄНТОМ</p>
+
+  <div class="vd-workflow__steps">
+
+    <!-- STEP 1 -->
+    <div class="vd-step" id="vd-s1">
+      <div class="vd-step__bar"></div>
+      <div class="vd-step__inner">
+        <div class="vd-step__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2d8a3e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="7" y="2" width="10" height="20" rx="2"/>
+            <rect x="9" y="5" width="6" height="9" rx="0.5"/>
+            <circle cx="12" cy="17" r="1"/>
+            <line x1="10" y1="3.5" x2="14" y2="3.5"/>
+          </svg>
+        </div>
+        <div class="vd-step__content">
+          <div class="vd-step__title">Контакт</div>
+          <div class="vd-step__sub">Дзвінок або повідомлення</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARROW -->
+    <div class="vd-workflow__arrow" id="vd-a1">
+      <svg viewBox="0 0 24 12" fill="none">
+        <line x1="0" y1="6" x2="18" y2="6" stroke="#2a2c30" stroke-width="1" stroke-dasharray="4 3"/>
+        <polygon points="16,2 24,6 16,10" fill="#3a3c42"/>
+      </svg>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="vd-step" id="vd-s2">
+      <div class="vd-step__bar"></div>
+      <div class="vd-step__inner">
+        <div class="vd-step__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2d8a3e" stroke-width="1.8" stroke-linecap="round">
+            <rect x="2" y="9" width="20" height="8" rx="2"/>
+            <line x1="6" y1="9" x2="6" y2="13"/>
+            <line x1="10" y1="9" x2="10" y2="15"/>
+            <line x1="14" y1="9" x2="14" y2="13"/>
+            <line x1="18" y1="9" x2="18" y2="13"/>
+          </svg>
+        </div>
+        <div class="vd-step__content">
+          <div class="vd-step__title">Замір</div>
+          <div class="vd-step__sub">На об'єкті<br>Індив. розміри</div>
+          <div class="vd-step__badge">передплата</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARROW -->
+    <div class="vd-workflow__arrow" id="vd-a2">
+      <svg viewBox="0 0 24 12" fill="none">
+        <line x1="0" y1="6" x2="18" y2="6" stroke="#2a2c30" stroke-width="1" stroke-dasharray="4 3"/>
+        <polygon points="16,2 24,6 16,10" fill="#3a3c42"/>
+      </svg>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="vd-step" id="vd-s3">
+      <div class="vd-step__bar"></div>
+      <div class="vd-step__inner">
+        <div class="vd-step__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2d8a3e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="2" width="12" height="22" rx="1"/>
+            <circle cx="9" cy="13" r="1.2"/>
+          </svg>
+        </div>
+        <div class="vd-step__content">
+          <div class="vd-step__title">Виготовлення</div>
+          <div class="vd-step__sub">Закупівля та виробництво</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARROW -->
+    <div class="vd-workflow__arrow" id="vd-a3">
+      <svg viewBox="0 0 24 12" fill="none">
+        <line x1="0" y1="6" x2="18" y2="6" stroke="#2a2c30" stroke-width="1" stroke-dasharray="4 3"/>
+        <polygon points="16,2 24,6 16,10" fill="#3a3c42"/>
+      </svg>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="vd-step" id="vd-s4">
+      <div class="vd-step__bar"></div>
+      <div class="vd-step__inner">
+        <div class="vd-step__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2d8a3e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="12" y="8" width="8" height="6" rx="1.5"/>
+            <rect x="8" y="9.5" width="4" height="3" rx="1"/>
+            <line x1="4" y1="11" x2="8" y2="11"/>
+            <path d="M20,8 Q24,8 24,11 Q24,14 20,14"/>
+            <line x1="15" y1="14" x2="14" y2="19"/>
+            <line x1="14" y1="19" x2="17" y2="19"/>
+          </svg>
+        </div>
+        <div class="vd-step__content">
+          <div class="vd-step__title">Установка</div>
+          <div class="vd-step__sub">Монтаж конструкції</div>
+          <div class="vd-step__badge">фактична оплата</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Progress bar (desktop only) -->
+  <div class="vd-workflow__progress" id="vd-progress">
+    <div class="vd-workflow__progress-track"></div>
+    <div class="vd-workflow__progress-fill" id="vd-fill"></div>
+    <div class="vd-workflow__dots">
+      <div class="vd-dot" id="vd-d1"></div>
+      <div class="vd-dot" id="vd-d2"></div>
+      <div class="vd-dot" id="vd-d3"></div>
+      <div class="vd-dot" id="vd-d4"></div>
+    </div>
+  </div>
+
+  <p class="vd-workflow__tagline" id="vd-tagline">
+    Власне виробництво · Безкоштовний замір · Монтаж під ключ · 20+ років досвіду
+  </p>
+
+  <div class="vd-workflow__footer" id="vd-footer">
+    <div class="vd-footer-col">
+      <div class="vd-footer-col__label">Телефон</div>
+      <a class="vd-footer-col__val" href="tel:0994714483">099 471 44 83</a>
+    </div>
+    <div class="vd-footer-col">
+      <div class="vd-footer-col__label">Telegram</div>
+      <a class="vd-footer-col__val" href="https://t.me/Syomking?text=Код:%202026" target="_blank">@Syomking</a>
+    </div>
+    <div class="vd-footer-col">
+      <div class="vd-footer-col__label">Кропивницький</div>
+      <span class="vd-footer-col__val vd-footer-col__val--gray">вул. Вербицького, 5</span>
+    </div>
+  </div>
+
+  <hr class="vd-workflow__divider" style="margin-top: 14px;">
+
+</section>
+
+<script>
+(function() {
+  var delays = [
+    { el: 'vd-label',    d: 100 },
+    { el: 'vd-s1',       d: 250 },
+    { el: 'vd-a1',       d: 780 },
+    { el: 'vd-s2',       d: 980 },
+    { el: 'vd-a2',       d: 1500 },
+    { el: 'vd-s3',       d: 1700 },
+    { el: 'vd-a3',       d: 2220 },
+    { el: 'vd-s4',       d: 2420 },
+    { el: 'vd-d1',       d: 700  },
+    { el: 'vd-d2',       d: 1450 },
+    { el: 'vd-d3',       d: 2200 },
+    { el: 'vd-d4',       d: 2950 },
+    { el: 'vd-progress', d: 600  },
+    { el: 'vd-tagline',  d: 3100 },
+    { el: 'vd-footer',   d: 3400 },
+  ];
+
+  function animate() {
+    delays.forEach(function(item) {
+      var el = document.getElementById(item.el);
+      if (!el) return;
+      el.style.opacity = '0';
+      el.style.transform = '';
+      if (el.classList.contains('vd-dot')) {
+        el.style.transform = 'scale(0)';
+      } else if (el.id !== 'vd-progress' && el.id !== 'vd-tagline' && el.id !== 'vd-footer') {
+        el.style.transform = 'translateY(14px)';
+      }
+    });
+
+    var fill = document.getElementById('vd-fill');
+    if (fill) fill.style.width = '0';
+
+    delays.forEach(function(item) {
+      var el = document.getElementById(item.el);
+      if (!el) return;
+      setTimeout(function() {
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        el.style.opacity = el.id === 'vd-progress' ? '1' : '1';
+        if (el.classList.contains('vd-dot')) {
+          el.style.transform = 'scale(1)';
+        } else {
+          el.style.transform = 'translateY(0)';
+        }
+      }, item.d);
+    });
+
+    setTimeout(function() {
+      var fill = document.getElementById('vd-fill');
+      if (fill) { fill.style.transition = 'width 1.8s ease'; fill.style.width = '100%'; }
+    }, 700);
+  }
+
+  // IntersectionObserver — запуск при появі на екрані
+  var section = document.getElementById('vd-workflow');
+  var started = false;
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !started) {
+          started = true;
+          animate();
+        }
+      });
+    }, { threshold: 0.2 });
+    obs.observe(section);
+  } else {
+    animate();
+  }
+})();
+</script>
+
+</body>
+</html>
+
     <div class="calc-card" id="calculator">
       <h2>Орієнтир вартості</h2>
       <div class="calc-grid">
