@@ -70,12 +70,11 @@
     .logo-link { position: fixed; top: 20px; left: 20px; z-index: 1000; width: 48px; height: 48px; background: rgba(26, 26, 26, 0.95); border: 1px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s; box-shadow: var(--shadow-md); }
     .logo-link:hover { transform: scale(1.05); box-shadow: var(--shadow-lg); border-color: rgba(227, 30, 36, 0.8); }
     .logo-link img { width: 28px; height: 28px; }
-    header { width: 100%; position: relative; height: 266px; overflow: hidden; background: url('bg-header.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-shadow: inset 0 -1px 0 rgba(255,255,255,0.05); padding: 20px; box-sizing: border-box; }
+    header { width: 100%; position: relative; height: 280px; overflow: visible; background: url('bg-header.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-shadow: inset 0 -1px 0 rgba(255,255,255,0.05); padding: 20px; box-sizing: border-box; }
     .header-content { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 100%; max-width: 1100px; padding: 0 20px; box-sizing: border-box; }
     header h1 { font-family: 'Montserrat', sans-serif; margin: 10px 0 5px 0; font-size: clamp(1.2rem, 5vw, 2.2rem); font-weight: 700; text-transform: uppercase; color: #e8e6e3; line-height: 1.1; letter-spacing: 0.5px; text-shadow: 0 2px 12px rgba(0,0,0,0.6), 0 4px 24px rgba(0,0,0,0.4); opacity: 0.85; }
     .sub-header-top { font-family: 'Montserrat', sans-serif; font-size: clamp(0.6rem, 2.5vw, 1.3rem); color: #e8e6e3; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; opacity: 0.92; letter-spacing: 1.2px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); } 
     .sub-header-bottom { margin: 0; font-weight: 600; color: #e8e6e3; letter-spacing: 1.8px; font-size: clamp(0.7rem, 2.2vw, 1rem); text-transform: uppercase; opacity: 0.85; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
-    .features-bar { width: 100%; background: linear-gradient(180deg, #100f0c 0%, #141310 100%); padding: 14px 0; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; border-bottom: 1px solid var(--border-color); align-items: center; box-sizing: border-box; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
     .dropdown { position: relative; display: inline-block; }
     .dropdown-content { display: none; position: absolute; background-color: #141310; min-width: 200px; box-shadow: 0 8px 16px rgba(0,0,0,0.6); z-index: 1000; border: 1px solid var(--border-color); border-radius: 4px; margin-top: 5px; }
     .dropdown-content a { color: #78756f; padding: 10px 16px; text-decoration: none; display: block; font-size: 0.72rem; transition: all 0.3s; border-bottom: 1px solid #252320; }
@@ -83,12 +82,11 @@
     .dropdown-content a:hover { background-color: #252525; color: #e31e24; }
     .dropdown:hover .dropdown-content { display: block; }
     @media (max-width: 768px) {
-      .features-bar { padding: 6px 0; gap: 8px; }
       .feature-item { font-size: 0.65rem; padding: 4px 8px; }
       .feature-item::before { font-size: 1em; }
       .promo-container { gap: 6px; }
       .promo-links { gap: 12px; height: 16px; padding: 2px 8px; }
-      .promo-label { padding: 2px 6px; top: 22px; }
+      .promo-label { padding: 2px 6px; margin-top: 6px; }
       .p-small { font-size: 0.45rem; }
       .p-big { font-size: 0.9rem; }
       .p-accent { font-size: 0.7rem; }
@@ -103,12 +101,12 @@
     .feature-active:hover .contact-tip { opacity: 1; top: -50px; }
     .promo-container { display: flex; flex-direction: column; align-items: center; position: relative; }
     .promo-links { display: flex; gap: 32px; align-items: center; height: 20px; position: relative; padding: 5px 15px; z-index: 10; }
-    .promo-label { color: var(--promo-green-bright); font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; position: absolute; top: 35px; left: 50%; white-space: nowrap; transform: translateX(-50%); animation: swing-continuous 4s ease-in-out infinite; filter: drop-shadow(0 2px 6px rgba(46, 204, 113, 0.4)); }
+    .promo-label { color: var(--promo-green-bright); font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; position: static; display: block; text-align: center; margin-top: 10px; white-space: nowrap; animation: swing-continuous 4s ease-in-out infinite; filter: drop-shadow(0 2px 6px rgba(46, 204, 113, 0.4)); transform-origin: center top; }
     .p-part { display: inline-block; vertical-align: middle; }
     .p-small { font-size: 0.56rem; margin: 0 1.3px; }
     .p-big { font-size: 1.35rem; margin: 0 1.3px; line-height: 1; }
     .p-accent { font-size: 0.97rem; margin: 0 1.3px; }
-    @keyframes swing-continuous { 0%, 50%, 100% { transform: translateX(-50%) rotate(0deg); } 25% { transform: translateX(-50%) rotate(7deg); } 75% { transform: translateX(-50%) rotate(-7deg); } }
+    @keyframes swing-continuous { 0%, 50%, 100% { transform: rotate(0deg); } 25% { transform: rotate(7deg); } 75% { transform: rotate(-7deg); } }
     @media only screen and (max-width: 768px) {
       :root {
         --primary: #c41a1f;
@@ -116,7 +114,7 @@
         --promo-green-bright: rgb(35, 165, 90);
         --promo-green-dark: #229963;
       }
-      header { height: 168px; background-position: center center; background-size: cover; padding: 15px; }
+      header { height: 240px; background-position: center center; background-size: cover; padding: 15px; }
       header h1 { font-size: clamp(1rem, 4.5vw, 1.8rem); }
       .sub-header-top { font-size: clamp(0.55rem, 2vw, 0.9rem); margin-bottom: 6px; }
       .sub-header-bottom { font-size: clamp(0.6rem, 2vw, 0.85rem); }
@@ -128,6 +126,7 @@
     }
     .container { width: 100%; max-width: 1100px; margin: 32px auto 0 auto; padding: 0 20px; box-sizing: border-box; flex: 1; position: relative; }
     .card { display: flex; background: linear-gradient(145deg, #181714, #131210); margin-bottom: 28px; overflow: hidden; border: 1px solid var(--border-color); border-top: 1px solid #2d2d2d; box-shadow: var(--shadow-md); cursor: pointer; transition: all 0.35s cubic-bezier(0.4,0,0.2,1); border-radius: 2px; }
+    @media (max-width: 768px) { .card { margin-bottom: 15px; } }
     .card:hover { transform: translateY(-2px); border-color: #404040; box-shadow: var(--shadow-lg); background: linear-gradient(145deg, #1e1e1e, #141310); }
     .card-image-wrapper { width: 40%; max-width: 420px; height: 280px; background: var(--image-block-bg); padding: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-sizing: border-box; transition: background 0.3s ease; }
     .card img { width: 100%; height: 100%; object-fit: cover; background: var(--image-block-bg); border: 1px solid #2d2d2d; pointer-events: none; object-position: center; max-width: 100%; filter: brightness(0.95) contrast(1.05); backface-visibility: hidden; -webkit-backface-visibility: hidden; transform: translateZ(0); -webkit-transform: translateZ(0); }
@@ -138,7 +137,7 @@
     .red-badge, .green-badge { display: inline-block; padding: 4px 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; border-radius: 3px; font-size: 0.72rem; line-height: 1.1; vertical-align: middle; margin-left: -10px; transition: all 0.3s ease; }
     .red-badge { background: rgba(227, 30, 36, 0.12); color: rgba(227, 30, 36, 0.8); opacity: 0.85; box-shadow: inset 0 0 0 1px rgba(227, 30, 36, 0.15); margin-bottom: 15px; display: inline-block; }
     .green-badge { background: rgba(46,204,113,0.15); color: var(--promo-green-bright); box-shadow: inset 0 0 0 1px rgba(46,204,113,0.2); }
-    .map-section { width: 100%; margin: 12px 0 0 0; padding: 0; text-align: center; position: relative; }
+    .map-section { width: 100%; margin: 0; padding: 0; text-align: center; position: relative; }
     .map-label { position: absolute; top: 16px; left: 16px; background: rgba(15,15,15,0.94); color: #e8e6e3; padding: 9px 16px; font-size: 0.75rem; font-weight: 600; border: 1px solid var(--border-color); border-radius: 3px; z-index: 10; backdrop-filter: blur(6px); box-shadow: var(--shadow-sm); }
     .map-container { width: 100%; height: 280px; border: 1px solid var(--border-color); background: #050504; overflow: hidden; box-shadow: var(--shadow-sm); border-radius: 2px; }
     .map-container iframe { width: 100%; height: 100%; border: none; filter: grayscale(1) invert(0.92) contrast(1.2); }
@@ -153,7 +152,7 @@
       .card { flex-direction: column; align-items: center; }
       .card-image-wrapper { width: 100%; max-width: 100%; height: 280px; padding: 10px; }
       .card-content { width: 100%; padding: 18px; text-align: left; align-items:flex-start; }
-      .section-text { margin: 20px auto; }
+      .section-text { margin: 15px auto 15px auto; }
     }
     @media (max-width: 600px) {
       .container { padding: 0 8px !important; }
@@ -161,6 +160,41 @@
       .card-image-wrapper { background: transparent !important; border: none !important; box-shadow: none !important; padding: 0 !important; height: 240px !important; }
       .card img { border: none !important; border-radius: 4px !important; }
     }
+  </style>
+  <style>
+    .card { opacity: 0; transform: translateY(28px); transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1), border-color 0.35s, box-shadow 0.35s, background 0.35s !important; }
+    .card.card-visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 768px) {
+      .card-detail-btn { display: flex !important; }
+      .card { position: relative; padding-bottom: 42px; }
+      .card-detail-btn { position: absolute; bottom: 0; left: 0; right: 0; }
+    }
+    .card-detail-btn {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 11px 18px;
+      border-top: 1px solid #1e3a20;
+      background: rgba(45,138,62,0.06);
+      font-size: 11px;
+      font-weight: 600;
+      color: #2d8a3e;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-sizing: border-box;
+      margin-top: 0;
+    }
+    .card-detail-btn:hover { background: rgba(45,138,62,0.12); }
+    .card-detail-btn-arrow {
+      width: 18px; height: 18px;
+      border: 1px solid #2d8a3e;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .card-detail-btn-arrow svg { width: 9px; height: 9px; }
   </style>
 </head>
 <body>
@@ -171,25 +205,19 @@
   <header>
     <div class="header-content">
       <h1>ВІКНА ТА ДВЕРІ КРОПИВНИЦЬКИЙ</h1>
+      <div class="promo-container" style="margin-top: 18px;">
+        <div class="promo-links">
+          <a href="https://t.me/Syomking?text=Код:%202026" target="_blank" rel="noopener noreferrer" class="feature-item feature-active">Telegram<span class="contact-tip">Код: 2026</span></a>
+          <a href="tel:0994714483" class="feature-item feature-active">0994714483<span class="contact-tip">Код: 2026</span></a>
+        </div>
+        <div class="promo-label">
+          <span class="p-part p-small">до</span><span class="p-part p-big">10%</span>
+          <span class="p-part p-accent">знижка</span><span class="p-part p-small">код:</span>
+          <span class="p-part p-accent">2026</span>
+        </div>
+      </div>
     </div>
   </header>
-  <div class="features-bar">
-    <div class="feature-item">Власне виробництво</div>
-    <div class="feature-item">Безкоштовний замір</div>
-    <div class="feature-item">Монтаж під ключ</div>
-    <div class="feature-item">20+ років досвіду</div>
-    <div class="promo-container">
-      <div class="promo-links">
-        <a href="https://t.me/Syomking?text=Код:%202026" target="_blank" rel="noopener noreferrer" class="feature-item feature-active">Telegram<span class="contact-tip">Код: 2026</span></a>
-        <a href="tel:0994714483" class="feature-item feature-active">0994714483<span class="contact-tip">Код: 2026</span></a>
-      </div>
-      <div class="promo-label">
-        <span class="p-part p-small">до</span><span class="p-part p-big">10%</span>
-        <span class="p-part p-accent">знижка</span><span class="p-part p-small">код:</span>
-        <span class="p-part p-accent">2026</span>
-      </div>
-    </div>
-  </div>
   
   <div style="width: 100%; background: #050504; padding: 5px 0; text-align: center; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); line-height: 34px;">
     <a href="doors.html" style="margin: 0 10px; font-size: 0.75rem; color: #78756f; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='rgba(227, 30, 36, 0.8)'" onmouseout="this.style.color='#78756f'">Вікна та Двері</a>
@@ -203,7 +231,7 @@
         <a href="structures-portfolio.html">Металоконструкції</a>
       </div>
     </div>
-    <a href="doors.html#calculator" style="margin: 0 10px; font-size: 0.75rem; color: #78756f; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='rgba(227, 30, 36, 0.8)'" onmouseout="this.style.color='#78756f'">Орієнтир вартості</a>
+    <a href="doors.html#calculator" style="margin: 0 10px; font-size: 0.75rem; color: #78756f; text-decoration: none; transition: color 0.3s; white-space: nowrap;" onmouseover="this.style.color='rgba(227, 30, 36, 0.8)'" onmouseout="this.style.color='#78756f'">Орієнтир вартості</a>
     <a href="https://www.facebook.com/viknadverionline/" target="_blank" rel="noopener noreferrer" style="margin: 0 10px; font-size: 0.75rem; color: #78756f; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='rgba(227, 30, 36, 0.8)'" onmouseout="this.style.color='#78756f'">Facebook</a>
   </div>
   
@@ -218,6 +246,7 @@
           <span class="red-badge" style="margin-top: 8px;">Безкоштовний замір та прорахунок</span>
         </div>
       </div>
+      <a href="doors.html" class="card-detail-btn" onclick="event.stopPropagation()">Детальніше<div class="card-detail-btn-arrow"><svg viewBox="0 0 9 9" fill="none" stroke="#2d8a3e" stroke-width="1.5" stroke-linecap="round"><path d="M2 4.5h5M4.5 2l2.5 2.5-2.5 2.5"/></svg></div></a>
     </div>
     <div class="card" onclick="location.href='gates.html'">
       <div class="card-image-wrapper"><img src="gates.png" alt="Ворота та паркани Кропивницький під ключ" width="800" height="600" loading="lazy"></div>
@@ -229,6 +258,7 @@
           <span class="red-badge" style="margin-top: 8px;">Доставка по місту безкоштовно</span>
         </div>
       </div>
+      <a href="gates.html" class="card-detail-btn" onclick="event.stopPropagation()">Детальніше<div class="card-detail-btn-arrow"><svg viewBox="0 0 9 9" fill="none" stroke="#2d8a3e" stroke-width="1.5" stroke-linecap="round"><path d="M2 4.5h5M4.5 2l2.5 2.5-2.5 2.5"/></svg></div></a>
     </div>
     <div class="card" onclick="location.href='structures.html'">
       <div class="card-image-wrapper"><img src="structures.png" alt="Металоконструкції Кропивницький" width="800" height="600" loading="lazy"></div>
@@ -240,6 +270,7 @@
           <span class="red-badge" style="margin-top: 8px;">Консультація та проектування</span> 
         </div>
       </div>
+      <a href="structures.html" class="card-detail-btn" onclick="event.stopPropagation()">Детальніше<div class="card-detail-btn-arrow"><svg viewBox="0 0 9 9" fill="none" stroke="#2d8a3e" stroke-width="1.5" stroke-linecap="round"><path d="M2 4.5h5M4.5 2l2.5 2.5-2.5 2.5"/></svg></div></a>
     </div>
     <div class="map-section">
       <div class="map-label">вул. Вербицького, 5, Кропивницький</div>
@@ -254,7 +285,7 @@
     </div>
   </div>
   
-  <div style="width: 100%; background: #050504; padding: 5px 0; text-align: center; border-top: 1px solid #252320; border-bottom: 1px solid #252320; margin-top: -26px; line-height: 34px;">
+  <div style="width: 100%; background: #050504; padding: 5px 0; text-align: center; border-top: 1px solid #252320; border-bottom: 1px solid #252320; margin-top: 15px; line-height: 34px;">
     <a href="doors.html" style="margin: 0 8px; font-size: 0.7rem; color: #5a5853; text-decoration: none;">Вікна та Двері</a>
     <a href="gates.html" style="margin: 0 8px; font-size: 0.7rem; color: #5a5853; text-decoration: none;">Ворота та Паркани</a>
     <a href="structures.html" style="margin: 0 8px; font-size: 0.7rem; color: #5a5853; text-decoration: none;">Металоконструкції</a>
@@ -266,7 +297,7 @@
         <a href="structures-portfolio.html">Металоконструкції</a>
       </div>
     </div>
-    <a href="doors.html#calculator" style="margin: 0 8px; font-size: 0.7rem; color: #5a5853; text-decoration: none;">Орієнтир вартості</a>
+    <a href="doors.html#calculator" style="margin: 0 8px; font-size: 0.7rem; color: #5a5853; text-decoration: none; white-space: nowrap;">Орієнтир вартості</a>
     <a href="https://www.facebook.com/viknadverionline/" target="_blank" rel="noopener noreferrer" style="margin: 0 8px; font-size: 0.7rem; color: #5a5853; text-decoration: none;">Facebook</a>
   </div>
   
@@ -457,5 +488,29 @@
     ]
   }
   </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d16f2ebdb83ca52',t:'MTc3MTY4NDMwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d16f2ebdb83ca52',t:'MTc3MTY4NDMwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>  <script>
+  (function() {
+    var cards = document.querySelectorAll('.card');
+    if (!cards.length) return;
+    if ('IntersectionObserver' in window) {
+      var delays = [0, 180, 360];
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var idx = Array.prototype.indexOf.call(cards, entry.target);
+            var delay = delays[idx] !== undefined ? delays[idx] : 0;
+            setTimeout(function() {
+              entry.target.classList.add('card-visible');
+            }, delay);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      cards.forEach(function(card) { observer.observe(card); });
+    } else {
+      cards.forEach(function(card) { card.classList.add('card-visible'); });
+    }
+  })();
+  </script>
+</body>
 </html>
